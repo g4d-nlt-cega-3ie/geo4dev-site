@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tools - Geo4Dev</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+<div class="container-fluid px-3">
+<a class="navbar-brand" href="index.html"><span class="brand-geo">Geo</span><span class="brand-4">4</span><span class="brand-dev">Dev</span></a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ms-auto align-items-center">
+<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+<li class="nav-item"><a class="nav-link active" href="tools.html">Tools</a></li>
+<li class="nav-item"><a class="nav-link" href="training.html">Training</a></li>
+<li class="nav-item"><a class="nav-link" href="dataset.html">Library</a></li>
+<li class="nav-item"><a class="nav-link" href="conference.html">Conference</a></li>
+<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<!-- Hero -->
+<section class="hero-section" style="min-height:300px">
+<div class="container">
+<div class="hero-content" style="padding:40px 0">
+<p class="section-label"><i class="bi bi-geo-alt-fill me-1"></i>TOOLS</p>
+<h1>Geographic Publication Browser</h1>
+<p class="hero-subtitle">Browse geotagged publications on an interactive map. Filter by category, click markers to explore, and search the database.</p>
+</div>
+</div>
+</section>
+
+<!-- Map Section -->
+<section class="py-4">
+<div class="container-fluid px-3">
+<div class="row g-3">
+<!-- Sidebar -->
+<div class="col-lg-3">
+<div class="map-sidebar">
+<h5 style="font-weight:600;margin-bottom:0.75rem"><i class="bi bi-funnel me-1"></i> Filters</h5>
+<input type="text" class="form-control mb-3" id="mapSearch" placeholder="Search publications..." oninput="filterPubs()" style="background:var(--bg-glass)!important;border:1px solid var(--border-subtle)!important;color:var(--text-primary);font-size:0.85rem;border-radius:var(--radius-sm)">
+<div class="d-flex flex-wrap gap-1 mb-3">
+<button class="layer-btn active" onclick="toggleLayer('all',this)">All</button>
+<button class="layer-btn" onclick="toggleLayer('Environment',this)" style="color:var(--accent-green)">Environment</button>
+<button class="layer-btn" onclick="toggleLayer('Health',this)" style="color:var(--accent-red)">Health</button>
+<button class="layer-btn" onclick="toggleLayer('Demographics',this)" style="color:var(--accent-purple)">Demographics</button>
+<button class="layer-btn" onclick="toggleLayer('Land Use',this)" style="color:var(--accent-amber)">Land Use</button>
+<button class="layer-btn" onclick="toggleLayer('Monitoring',this)" style="color:var(--accent-cyan)">Monitoring</button>
+<button class="layer-btn" onclick="toggleLayer('Governance',this)" style="color:var(--accent-blue)">Governance</button>
+</div>
+<div class="divider"></div>
+<h6 style="font-size:0.8rem;color:var(--text-muted);margin-top:0.75rem"><span id="pubCount">0</span> publications</h6>
+<div id="pubList"></div>
+</div>
+</div>
+<!-- Map -->
+<div class="col-lg-9">
+<div id="map" style="height:600px;border-radius:var(--radius-md)"></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+<div class="container">
+<div class="footer-bottom d-flex justify-content-between flex-wrap">
+<span>&copy; 2026 Geo4Dev</span>
+<span>Powered by <a href="https://nltgis.ai" target="_blank">NLT</a></span>
+</div>
+</div>
+</footer>
+
+<div id="toastContainer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script>
+var publications=[
+{title:"Nighttime Light Data for Development",lat:5.6,lng:7.5,category:"Environment",authors:"Goldblatt, R. et al.",desc:"Analysis of nighttime light satellite data for measuring economic development."},
+{title:"COVID-19 Impact Assessment in MENA",lat:30.0,lng:35.0,category:"Health",authors:"Roberts, M.",desc:"Analyzing COVID-19 economic impacts using nighttime lights in the Middle East."},
+{title:"Transport Corridors in Iraq",lat:33.3,lng:44.4,category:"Governance",authors:"Bougna, T.",desc:"Geospatial impact evaluation of highways in Iraq."},
+{title:"Poverty Mapping in East Africa",lat:-2.5,lng:34.0,category:"Demographics",authors:"CEGA Research",desc:"Spatial relationships in small area poverty estimation."},
+{title:"Crop Type Mapping - East Africa",lat:-6.8,lng:37.0,category:"Land Use",authors:"CIMMYT Team",desc:"Machine learning for crop type identification from satellite imagery."},
+{title:"Deforestation Monitoring - Congo Basin",lat:-1.0,lng:22.0,category:"Environment",authors:"Hansen, M.",desc:"MODIS VCF product for tracking deforestation."},
+{title:"Urban Growth Analysis - India",lat:20.6,lng:78.9,category:"Demographics",authors:"Elvidge, C.",desc:"Annual cycling patterns of nighttime lights in India."},
+{title:"Maize Yield Prediction - Kenya",lat:-1.3,lng:36.8,category:"Land Use",authors:"Lobell, D.",desc:"ML models predicting crop yields from satellite data."},
+{title:"Mobile Data for Aid Distribution",lat:0.3,lng:32.6,category:"Health",authors:"Blumenstock, J.",desc:"Targeting emergency COVID-19 aid using mobile phone data."},
+{title:"Transport Assessment - Morocco",lat:31.8,lng:-7.1,category:"Governance",authors:"Bougna, T.",desc:"Highway impact evaluation using geospatial analysis."},
+{title:"Wealth Mapping - West Africa",lat:7.5,lng:3.9,category:"Demographics",authors:"CEGA & Facebook",desc:"Population-weighted wealth map creation."},
+{title:"Nighttime Lights Time Series",lat:2.0,lng:30.0,category:"Monitoring",authors:"Elvidge, C.",desc:"21-year time series of nighttime lights from DMSP."},
+{title:"Woody Cover Estimation - S. Africa",lat:-25.7,lng:28.2,category:"Environment",authors:"Wessels, K.",desc:"Quantifying woody cover from LiDAR and SAR data."},
+{title:"Satellite Transport Evaluation",lat:23.7,lng:90.4,category:"Governance",authors:"Stokenberga, A.",desc:"Strategic transport in BBIN countries using nighttime lights."},
+{title:"Impact Evaluation Methods",lat:-8.5,lng:35.5,category:"Monitoring",authors:"CEGA & 3IE",desc:"Remote sensing framework for impact evaluations."},
+{title:"Vegetation Change Detection",lat:-4.3,lng:29.9,category:"Environment",authors:"Geo4Dev Research",desc:"Multi-sensor vegetation change analysis."},
+{title:"Open Nighttime Lights Platform",lat:38.9,lng:-77.0,category:"Monitoring",authors:"Geo4Dev Team",desc:"Open Nighttime Lights platform and GEE API."},
+{title:"Income Prediction from Imagery",lat:9.1,lng:7.5,category:"Demographics",authors:"Hanson, G.",desc:"Predicting income changes using satellite imagery."},
+{title:"Big Data in Impact Evaluations",lat:51.5,lng:-0.1,category:"Monitoring",authors:"Glandon, D.",desc:"State of play for big data in development evaluations."},
+{title:"Automated Crop Mapping",lat:-3.4,lng:29.4,category:"Land Use",authors:"Geo4Dev AI Lab",desc:"Deep learning for automated crop classification."}
+];
+
+var catColors={Environment:"#22c55e",Health:"#ef4444",Demographics:"#a855f7","Land Use":"#f59e0b",Monitoring:"#06b6d4",Governance:"#2563eb"};
+
+var map=L.map("map",{zoomControl:true}).setView([10,25],3);
+L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",{attribution:"&copy; CARTO",subdomains:"abcd",maxZoom:19}).addTo(map);
+
+var markers=L.markerClusterGroup({maxClusterRadius:40,spiderfyOnMaxZoom:true,showCoverageOnHover:false,iconCreateFunction:function(cluster){var count=cluster.getChildCount();return L.divIcon({html:'<div style="background:linear-gradient(135deg,#2563eb,#06b6d4);color:#fff;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.8rem;box-shadow:0 2px 8px rgba(0,0,0,0.3)">'+count+'</div>',className:"custom-cluster",iconSize:[36,36]})}});
+
+var allMarkers=[];
+
+publications.forEach(function(p,i){
+var color=catColors[p.category]||"#2563eb";
+var icon=L.divIcon({html:'<div style="background:'+color+';width:14px;height:14px;border-radius:50%;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,0.4)"></div>',className:"",iconSize:[14,14],iconAnchor:[7,7]});
+var m=L.marker([p.lat,p.lng],{icon:icon});
+m.bindPopup('<div style="min-width:200px"><strong style="font-size:0.9rem">'+p.title+'</strong><br><span style="color:#666;font-size:0.75rem">'+p.authors+'</span><br><span style="display:inline-block;padding:2px 6px;border-radius:8px;font-size:0.7rem;background:'+color+'22;color:'+color+';margin-top:4px">'+p.category+'</span><br><span style="color:#888;font-size:0.75rem;margin-top:4px;display:block">'+p.desc+'</span></div>');
+m.pubData=p;
+m.pubIndex=i;
+allMarkers.push(m);
+markers.addLayer(m);
+});
+
+map.addLayer(markers);
+
+var activeFilter="all";
+
+function toggleLayer(cat,btn){document.querySelectorAll(".layer-btn").forEach(function(b){b.classList.remove("active")});btn.classList.add("active");activeFilter=cat;filterPubs()}
+
+function filterPubs(){
+var q=(document.getElementById("mapSearch").value||"").toLowerCase();
+markers.clearLayers();
+var count=0;
+var listHtml="";
+allMarkers.forEach(function(m){
+var p=m.pubData;
+var matchCat=activeFilter==="all"||p.category===activeFilter;
+var matchQ=!q||p.title.toLowerCase().indexOf(q)!==-1||p.authors.toLowerCase().indexOf(q)!==-1||p.desc.toLowerCase().indexOf(q)!==-1;
+if(matchCat&&matchQ){markers.addLayer(m);count++;
+listHtml+='<div class="pub-list-item" onclick="flyToMarker('+m.pubIndex+')"><h6>'+p.title+'</h6><p>'+p.authors+' &bull; <span style="color:'+catColors[p.category]+'">'+p.category+'</span></p></div>';}
+});
+document.getElementById("pubCount").textContent=count;
+document.getElementById("pubList").innerHTML=listHtml;
+}
+
+function flyToMarker(idx){var m=allMarkers[idx];if(m){map.flyTo([m.pubData.lat,m.pubData.lng],6,{duration:1});setTimeout(function(){m.openPopup()},1200)}}
+
+function showToast(msg,type){var t=document.createElement("div");t.className="custom-toast "+type;t.textContent=msg;document.getElementById("toastContainer").appendChild(t);setTimeout(function(){t.classList.add("show")},10);setTimeout(function(){t.classList.remove("show");setTimeout(function(){t.remove()},400)},4000)}
+
+// Navbar scroll
+window.addEventListener("scroll",function(){var n=document.querySelector(".navbar");if(window.scrollY>100)n.classList.add("scrolled");else n.classList.remove("scrolled")});
+
+// Init
+filterPubs();
+</script>
+</body>
+</html>
