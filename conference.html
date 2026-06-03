@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conference - Geo4Dev</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+<div class="container">
+<a class="navbar-brand" href="index.html"><span class="brand-geo">Geo</span><span class="brand-4">4</span><span class="brand-dev">Dev</span></a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ms-auto align-items-center">
+<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+<li class="nav-item"><a class="nav-link" href="tools.html">Tools</a></li>
+<li class="nav-item"><a class="nav-link" href="training.html">Training</a></li>
+<li class="nav-item"><a class="nav-link" href="dataset.html">Library</a></li>
+<li class="nav-item"><a class="nav-link active" href="conference.html">Conference</a></li>
+<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+<li class="nav-item ms-2"><button class="btn btn-register" onclick="document.getElementById('registerModal').style.display='flex'"><i class="bi bi-person-plus me-1"></i>Register</button></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<!-- Hero -->
+<section class="hero-section" style="min-height:400px">
+<div class="container">
+<div class="hero-content">
+<p class="section-label"><i class="bi bi-calendar-event me-1"></i>CONFERENCE</p>
+<h1>Geo4Dev Symposium</h1>
+<p class="hero-subtitle">Conference Schedule and Breakdown. Join leading researchers and practitioners for presentations on geospatial data for development.</p>
+<div class="d-flex gap-2 mt-3 flex-wrap">
+<button class="btn btn-primary-custom" onclick="document.getElementById('registerModal').style.display='flex'"><i class="bi bi-person-plus me-1"></i>Register for Conference</button>
+<button class="btn btn-outline-custom" onclick="document.getElementById('schedule').scrollIntoView({behavior:'smooth'})"><i class="bi bi-calendar3 me-1"></i>View Schedule</button>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Day Tabs -->
+<section class="py-5" id="schedule">
+<div class="container">
+<div class="d-flex gap-3 mb-4 flex-wrap">
+<button class="day-tab active" onclick="switchDay(1,this)" style="flex:1;min-width:200px"><i class="bi bi-1-circle me-1"></i> Day 1: Thursday, Dec 10<br><small style="opacity:0.7">Symposium &amp; Keynote</small></button>
+<button class="day-tab" onclick="switchDay(2,this)" style="flex:1;min-width:200px"><i class="bi bi-2-circle me-1"></i> Day 2: Friday, Dec 11<br><small style="opacity:0.7">Nighttime Lights Workshop</small></button>
+</div>
+
+<!-- Day 1 -->
+<div class="tab-pane active" id="day1">
+<p style="color:var(--text-secondary);margin-bottom:2rem">Geo4Dev Symposium featuring a keynote talk by Christopher D. Elvidge, Director of the Earth Observation Group at Colorado School of Mines.</p>
+
+<div class="session-block">
+<div class="session-time"><i class="bi bi-clock me-1"></i>9:15 AM PST</div>
+<div class="session-title">Session 1: New Data and Initiatives</div>
+<div class="presenter-item"><div><div class="presenter-name">Ran Goldblatt</div><div class="presenter-topic">Geospatial Analysis for Development Initiative</div><div class="presenter-org">New Light Technologies</div></div></div>
+<div class="presenter-item"><div><div class="presenter-name">Gabe Levin</div><div class="presenter-topic">Geo4.dev Website</div><div class="presenter-org">New Light Technologies</div></div></div>
+<div class="presenter-item"><div><div class="presenter-name">Berber Kramer</div><div class="presenter-topic">Publishing in Development Engineering</div><div class="presenter-org">IFPRI</div></div></div>
+<div class="presenter-item"><div><div class="presenter-name">Joshua Blumenstock</div><div class="presenter-topic">Using Mobile Phone and Satellite Data to Target Emergency COVID-19 Aid</div><div class="presenter-org">UC Berkeley / CEGA</div></div></div>
+</div>
+
+<div class="session-block">
+<div class="session-time"><i class="bi bi-clock me-1"></i>10:00 AM PST</div>
+<div class="session-title">Session 2: Nighttime Lights - Applications in Development (Part I)</div>
+<div class="presenter-item"><div><div class="presenter-name">Douglas Glandon</div><div class="presenter-topic">State of play for big data in impact evaluations</div><div class="presenter-org">3IE</div></div></div>
+<div class="presenter-item"><div><div class="presenter-name">Alice Duhaut</div><div class="presenter-topic">Granular Satellite Imagery to Evaluate Transport Corridors</div><div class="presenter-org">World Bank DIME</div></div></div>
+<div class="presenter-item"><div><div class="presenter-name">Theophile Bougna</div><div class="presenter-topic">Geospatial Impact Evaluation of Highways: Iraq and Morocco</div><div class="presenter-org">World Bank DIME</div></div></div>
+<div class="presenter-item"><div><div class="presenter-name">Gordon Hanson</div><div class="presenter-topic">Using Satellite Imagery to Predict Income and Population Changes</div><div class="presenter-org">Harvard Kennedy School</div></div></div>
+</div>
+
+<div class="session-block" style="background:transparent;border:none;text-align:center;color:var(--text-muted);padding:1rem"><i class="bi bi-cup-hot me-1"></i> 11:10 AM - Coffee Break</div>
+
+<div class="keynote-highlight">
+<p class="section-label">KEYNOTE ADDRESS</p>
+<h3><i class="bi bi-star me-1"></i> Chris Elvidge</h3>
+<p style="color:var(--text-secondary)">Colorado School of Mines</p>
+<p style="color:var(--text-secondary);font-size:0.9rem">Exploration of annual cycling patterns of nighttime lights in India: preliminary results</p>
+<div class="session-time" style="margin-top:0.5rem"><i class="bi bi-clock me-1"></i>11:20 AM PST</div>
+</div>
+
+<div class="session-block">
+<div class="session-time"><i class="bi bi-clock me-1"></i>12:00 PM PST</div>
+<div class="session-title">Session 3: Nighttime Lights - Applications in Development (Part II)</div>
+<div class="presenter-item"><div><div class="presenter-name">Mark Roberts</div><div class="presenter-topic">Economic impacts of COVID-19 in MENA using nighttime lights</div><div class="presenter-org">World Bank</div></div></div>
+<div class="presenter-item"><div><div class="presenter-name">Marshall Burke</div><div class="presenter-topic">Inferring wealth from daytime and nighttime imagery</div><div class="presenter-org">Stanford University</div></div></div>
+<div class="presenter-item"><div><div class="presenter-name">Muneeza M. Alam</div><div class="presenter-topic">Wider economic benefits of transport corridors</div><div class="presenter-org">World Bank</div></div></div>
+<div class="presenter-item"><div><div class="presenter-name">Aiga Stokenberga</div><div class="presenter-topic">Nighttime lights and strategic transport in BBIN countries</div><div class="presenter-org">World Bank</div></div></div>
+</div>
+
+<div class="session-block" style="background:transparent;border:none;text-align:center;color:var(--text-muted)"><i class="bi bi-flag me-1"></i> 1:10 PM PST - Closing Remarks</div>
+</div>
+
+<!-- Day 2 -->
+<div class="tab-pane" id="day2">
+<p style="color:var(--text-secondary);margin-bottom:2rem">Remotely sensed data is rapidly becoming critical in geo-spatial analysis, particularly in international development when other data sources are scarce. This workshop breaks down the perception that these data are too complex or costly using open source tools like Python and Google Earth Engine.</p>
+
+<div class="glass-card mb-4">
+<h5><i class="bi bi-info-circle me-1" style="color:var(--accent-blue)"></i> Workshop Details</h5>
+<p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:0.5rem">Through hands-on modules, experts will train researchers and policymakers in the application of Nighttime Lights data to important policy questions. Covers data access, interpretation, processing, visualization, and statistical analysis including time series.</p>
+<p style="color:var(--text-muted);font-size:0.85rem"><i class="bi bi-exclamation-circle me-1"></i>Familiarity with Python or programming (beginner OK) is preferred but not required.</p>
+<a href="training.html" class="btn btn-primary-custom btn-sm mt-2"><i class="bi bi-mortarboard me-1"></i>Access Workshop Tutorial</a>
+</div>
+
+<div class="session-block">
+<div class="session-time"><i class="bi bi-clock me-1"></i>9:00 AM - 2:45 PM PST</div>
+<div class="session-title">Nighttime Lights Workshop</div>
+<p style="color:var(--text-secondary);font-size:0.9rem;margin-top:0.5rem">Hands-on training covering:</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0.75rem;margin-top:1rem">
+<div class="glass-card" style="padding:1rem"><i class="bi bi-download me-2" style="color:var(--accent-blue)"></i><span style="font-size:0.85rem">Data Access &amp; Import</span></div>
+<div class="glass-card" style="padding:1rem"><i class="bi bi-eye me-2" style="color:var(--accent-cyan)"></i><span style="font-size:0.85rem">Interpretation &amp; Processing</span></div>
+<div class="glass-card" style="padding:1rem"><i class="bi bi-bar-chart me-2" style="color:var(--accent-green)"></i><span style="font-size:0.85rem">Visualization</span></div>
+<div class="glass-card" style="padding:1rem"><i class="bi bi-graph-up me-2" style="color:var(--accent-amber)"></i><span style="font-size:0.85rem">Time Series Analysis</span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Presenters -->
+<section class="py-5" style="background:var(--bg-secondary)">
+<div class="container">
+<p class="section-label"><i class="bi bi-people me-1"></i>PRESENTERS</p>
+<h2 class="section-title">Meet the Speakers</h2>
+<div class="row g-3 mt-3">
+<div class="col-6 col-md-4 col-lg-3"><div class="presenter-card"><div class="presenter-avatar">CE</div><h6>Chris Elvidge</h6><p>Colorado School of Mines</p></div></div>
+<div class="col-6 col-md-4 col-lg-3"><div class="presenter-card"><div class="presenter-avatar">RG</div><h6>Ran Goldblatt</h6><p>New Light Technologies</p></div></div>
+<div class="col-6 col-md-4 col-lg-3"><div class="presenter-card"><div class="presenter-avatar">JB</div><h6>Joshua Blumenstock</h6><p>UC Berkeley / CEGA</p></div></div>
+<div class="col-6 col-md-4 col-lg-3"><div class="presenter-card"><div class="presenter-avatar">GH</div><h6>Gordon Hanson</h6><p>Harvard Kennedy School</p></div></div>
+<div class="col-6 col-md-4 col-lg-3"><div class="presenter-card"><div class="presenter-avatar">MB</div><h6>Marshall Burke</h6><p>Stanford University</p></div></div>
+<div class="col-6 col-md-4 col-lg-3"><div class="presenter-card"><div class="presenter-avatar">MR</div><h6>Mark Roberts</h6><p>World Bank</p></div></div>
+<div class="col-6 col-md-4 col-lg-3"><div class="presenter-card"><div class="presenter-avatar">TB</div><h6>Theophile Bougna</h6><p>World Bank DIME</p></div></div>
+<div class="col-6 col-md-4 col-lg-3"><div class="presenter-card"><div class="presenter-avatar">GL</div><h6>Gabe Levin</h6><p>New Light Technologies</p></div></div>
+<div class="col-6 col-md-4 col-lg-3"><div class="presenter-card"><div class="presenter-avatar">DG</div><h6>Douglas Glandon</h6><p>3IE</p></div></div>
+<div class="col-6 col-md-4 col-lg-3"><div class="presenter-card"><div class="presenter-avatar">AD</div><h6>Alice Duhaut</h6><p>World Bank</p></div></div>
+<div class="col-6 col-md-4 col-lg-3"><div class="presenter-card"><div class="presenter-avatar">BK</div><h6>Berber Kramer</h6><p>IFPRI / Dev. Eng.</p></div></div>
+<div class="col-6 col-md-4 col-lg-3"><div class="presenter-card"><div class="presenter-avatar">AS</div><h6>Aiga Stokenberga</h6><p>World Bank</p></div></div>
+</div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="py-5">
+<div class="container">
+<div class="cta-banner">
+<h3><i class="bi bi-bell me-2"></i>Get Conference Updates</h3>
+<p>Register to receive updates about future Geo4Dev conferences and workshops.</p>
+<div class="d-flex justify-content-center gap-2 flex-wrap">
+<input type="email" id="confEmail" class="form-control" placeholder="your@email.com" style="max-width:300px;background:var(--bg-glass)!important;border:1px solid var(--border-subtle)!important;color:var(--text-primary);border-radius:var(--radius-sm)">
+<button class="btn btn-primary-custom" onclick="subscribeConf()"><i class="bi bi-bell-fill me-1"></i>Notify Me</button>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Register Modal -->
+<div id="registerModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:2000;align-items:center;justify-content:center;backdrop-filter:blur(4px)">
+<div style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);max-width:500px;width:90%;max-height:90vh;overflow-y:auto;padding:2rem">
+<div class="d-flex justify-content-between align-items-center mb-3">
+<h4 style="margin:0;font-weight:700"><i class="bi bi-calendar-check me-2"></i>Conference Registration</h4>
+<button onclick="document.getElementById('registerModal').style.display='none'" style="background:none;border:none;color:var(--text-secondary);font-size:1.5rem;cursor:pointer">&times;</button>
+</div>
+<form class="registration-form" onsubmit="handleConfRegister(event)">
+<div class="mb-3"><label>Full Name *</label><input type="text" class="form-control" required placeholder="Your name"></div>
+<div class="mb-3"><label>Email *</label><input type="email" class="form-control" required placeholder="your@email.com"></div>
+<div class="mb-3"><label>Organization</label><input type="text" class="form-control" placeholder="Affiliation"></div>
+<div class="mb-3"><label>Which days?</label>
+<div class="d-flex gap-2"><label class="filter-btn active" style="cursor:pointer"><input type="checkbox" class="d-none" checked> Day 1: Symposium</label>
+<label class="filter-btn active" style="cursor:pointer"><input type="checkbox" class="d-none" checked> Day 2: Workshop</label></div>
+</div>
+<button type="submit" class="btn btn-primary-custom w-100" id="confRegBtn"><i class="bi bi-check-circle me-1"></i>Register</button>
+</form>
+</div>
+</div>
+
+<!-- Footer -->
+<footer class="site-footer">
+<div class="container">
+<div class="row g-4">
+<div class="col-lg-4"><h6><span class="brand-geo">Geo</span><span class="brand-4">4</span><span class="brand-dev">Dev</span></h6><p style="color:var(--text-secondary);font-size:0.85rem">Geospatial Analysis for Development Initiative.</p></div>
+<div class="col-lg-2"><h6>Platform</h6><div class="d-flex flex-column gap-2"><a href="dataset.html">Library</a><a href="training.html">Training</a><a href="tools.html">Tools</a></div></div>
+<div class="col-lg-2"><h6>Community</h6><div class="d-flex flex-column gap-2"><a href="contact.html">Contact</a><a href="about.html">About</a></div></div>
+<div class="col-lg-2"><h6>Resources</h6><div class="d-flex flex-column gap-2"><a href="https://www.geo4.dev" target="_blank">Geo4.dev</a><a href="https://nltgis.ai" target="_blank">nltGIS.ai</a></div></div>
+</div>
+<div class="footer-bottom d-flex justify-content-between flex-wrap"><span>&copy; 2026 Geo4Dev</span><span>Powered by <a href="https://nltgis.ai" target="_blank">NLT</a></span></div>
+</div>
+</footer>
+
+<div id="toastContainer"></div>
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="bi bi-chevron-up"></i></button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+function switchDay(day,btn){document.querySelectorAll('.day-tab').forEach(function(t){t.classList.remove('active')});btn.classList.add('active');document.querySelectorAll('.tab-pane').forEach(function(p){p.classList.remove('active')});document.getElementById('day'+day).classList.add('active')}
+
+function handleConfRegister(e){e.preventDefault();var btn=document.getElementById('confRegBtn');btn.innerHTML='<span class="spinner"></span> Registering...';btn.disabled=true;setTimeout(function(){document.getElementById('registerModal').style.display='none';btn.innerHTML='<i class="bi bi-check-circle me-1"></i>Register';btn.disabled=false;showToast('Registered for the conference! You will receive a confirmation email.','success')},1500)}
+
+function subscribeConf(){var e=document.getElementById('confEmail').value.trim();if(!e||!e.includes('@')){showToast('Please enter a valid email.','warning');return}showToast('Subscribed for conference updates!','success');document.getElementById('confEmail').value=''}
+
+// Toggle day selection in register form
+document.querySelectorAll('.registration-form .filter-btn').forEach(function(b){b.addEventListener('click',function(){this.classList.toggle('active')})});
+
+function showToast(msg,type){var t=document.createElement('div');t.className='custom-toast '+type;t.textContent=msg;document.getElementById('toastContainer').appendChild(t);setTimeout(function(){t.classList.add('show')},10);setTimeout(function(){t.classList.remove('show');setTimeout(function(){t.remove()},400)},4000)}
+
+window.addEventListener('scroll',function(){var n=document.querySelector('.navbar');var b=document.getElementById('backToTop');if(window.scrollY>100)n.classList.add('scrolled');else n.classList.remove('scrolled');if(window.scrollY>300)b.classList.add('show');else b.classList.remove('show')});
+</script>
+</body>
+  </html>
