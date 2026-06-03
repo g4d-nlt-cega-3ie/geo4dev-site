@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Geo4Dev - Geospatial Analysis for Development Initiative</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+<div class="container">
+<a class="navbar-brand" href="index.html"><span class="brand-geo">Geo</span><span class="brand-4">4</span><span class="brand-dev">Dev</span></a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ms-auto align-items-center">
+<li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+<li class="nav-item"><a class="nav-link" href="tools.html">Tools</a></li>
+<li class="nav-item"><a class="nav-link" href="training.html">Training</a></li>
+<li class="nav-item"><a class="nav-link" href="dataset.html">Library</a></li>
+<li class="nav-item"><a class="nav-link" href="conference.html">Conference</a></li>
+<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+<li class="nav-item ms-2"><button class="btn btn-register" onclick="document.getElementById('registerModal').style.display='flex'"><i class="bi bi-person-plus me-1"></i>Register</button></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<!-- Hero -->
+<section class="hero-section">
+<div class="container">
+<div class="hero-content">
+<p class="section-label">GEOSPATIAL ANALYSIS FOR DEVELOPMENT</p>
+<h1>Search journals, datasets,<br><span class="highlight">tools &amp; geospatial data</span></h1>
+<p class="hero-subtitle">Explore timely and relevant research publications, datasets, mapping tools, and geospatial resources for international development.</p>
+<div class="search-bar">
+<input type="text" class="form-control" id="heroSearch" placeholder="Search the database...">
+<button class="btn-search" onclick="doSearch()"><i class="bi bi-search"></i></button>
+</div>
+<div class="search-tags">
+<a class="search-tag" onclick="quickSearch('Nighttime Lights')">Nighttime Lights</a>
+<a class="search-tag" onclick="quickSearch('Satellite Imagery')">Satellite Imagery</a>
+<a class="search-tag" onclick="quickSearch('Crop Mapping')">Crop Mapping</a>
+<a class="search-tag" onclick="quickSearch('Poverty Estimation')">Poverty Estimation</a>
+<a class="search-tag" onclick="quickSearch('Remote Sensing')">Remote Sensing</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Featured -->
+<section class="py-5">
+<div class="container">
+<div class="row g-4">
+<div class="col-md-6"><div class="featured-card" onclick="window.location.href='training.html'">
+<div class="label"><i class="bi bi-mortarboard me-1"></i> FEATURED LEARNING MATERIAL</div>
+<h5>Nighttime Light Data for Decision Making</h5>
+<p>Learn how nighttime light satellite data can inform development decisions and economic analysis.</p>
+</div></div>
+<div class="col-md-6"><div class="featured-card" onclick="window.location.href='dataset.html'">
+<div class="label"><i class="bi bi-database me-1"></i> FEATURED DATASET</div>
+<h5>Global Freely Available Nighttime Lights Data</h5>
+<p>Access global nighttime light datasets from VIIRS and DMSP for research and analysis.</p>
+</div></div>
+</div>
+</div>
+</section>
+
+<!-- Stats -->
+<section class="stats-section">
+<div class="container">
+<div class="row">
+<div class="col-6 col-md-3"><div class="stat-item"><div class="stat-number" data-target="20">0</div><div class="stat-label">Publications</div></div></div>
+<div class="col-6 col-md-3"><div class="stat-item"><div class="stat-number" data-target="15">0</div><div class="stat-label">Datasets</div></div></div>
+<div class="col-6 col-md-3"><div class="stat-item"><div class="stat-number" data-target="9">0</div><div class="stat-label">Training Modules</div></div></div>
+<div class="col-6 col-md-3"><div class="stat-item"><div class="stat-number" data-target="6">0</div><div class="stat-label">Partner Organizations</div></div></div>
+</div>
+</div>
+</section>
+
+<!-- News Feed -->
+<section class="py-5" style="background:var(--bg-secondary)">
+<div class="container">
+<p class="section-label"><i class="bi bi-rss me-1"></i>NEWS &amp; UPDATES</p>
+<h2 class="section-title">Global Development News</h2>
+<p class="section-subtitle mb-4">Stay informed about the latest in geospatial data, climate, health, and international development.</p>
+<div class="row g-3 mb-3">
+<div class="col-12"><div class="d-flex flex-wrap gap-2" id="newsFilters">
+<button class="filter-btn active" onclick="filterNews('all',this)">All</button>
+<button class="filter-btn" onclick="filterNews('geo',this)"><i class="bi bi-globe2 me-1"></i>Geospatial</button>
+<button class="filter-btn" onclick="filterNews('dev',this)"><i class="bi bi-graph-up me-1"></i>Development</button>
+<button class="filter-btn" onclick="filterNews('climate',this)"><i class="bi bi-cloud-sun me-1"></i>Climate</button>
+<button class="filter-btn" onclick="filterNews('health',this)"><i class="bi bi-heart-pulse me-1"></i>Health</button>
+</div></div>
+</div>
+<div class="row g-3" id="newsFeed">
+<div class="col-md-4 news-item" data-cat="geo"><div class="news-card">
+<div class="news-date">March 24, 2026</div><span class="news-source geo">Geospatial</span>
+<h5>New Satellite Constellation Enhances Global Nighttime Light Monitoring</h5>
+<p>Latest VIIRS-2 sensors provide 2x resolution improvement for nighttime light data, enabling more granular economic activity measurement.</p>
+</div></div>
+<div class="col-md-4 news-item" data-cat="dev"><div class="news-card">
+<div class="news-date">March 22, 2026</div><span class="news-source dev">Development</span>
+<h5>World Bank Launches Open Geospatial Data Initiative for LMICs</h5>
+<p>A new program will make high-resolution satellite data freely available to researchers in low- and middle-income countries.</p>
+</div></div>
+<div class="col-md-4 news-item" data-cat="climate"><div class="news-card">
+<div class="news-date">March 20, 2026</div><span class="news-source climate">Climate</span>
+<h5>Remote Sensing Reveals Accelerated Deforestation in Southeast Asia</h5>
+<p>MODIS and Landsat analysis shows 15% increase in tropical forest loss over the past year, impacting carbon sequestration goals.</p>
+</div></div>
+<div class="col-md-4 news-item" data-cat="health"><div class="news-card">
+<div class="news-date">March 18, 2026</div><span class="news-source health">Health</span>
+<h5>Geospatial Analysis Improves Disease Outbreak Response in Sub-Saharan Africa</h5>
+<p>Combining population density maps with mobility data helps health agencies target vaccination campaigns more effectively.</p>
+</div></div>
+<div class="col-md-4 news-item" data-cat="geo"><div class="news-card">
+<div class="news-date">March 15, 2026</div><span class="news-source geo">Geospatial</span>
+<h5>Google Earth Engine Expands Free Tier for Academic Research</h5>
+<p>Increased processing quotas and new datasets available for researchers studying environmental change and urbanization.</p>
+</div></div>
+<div class="col-md-4 news-item" data-cat="dev"><div class="news-card">
+<div class="news-date">March 12, 2026</div><span class="news-source dev">Development</span>
+<h5>Crop Yield Predictions Using AI Achieve Record Accuracy</h5>
+<p>Machine learning models trained on satellite imagery now predict crop yields with 92% accuracy across East Africa.</p>
+</div></div>
+</div>
+<div class="text-center mt-4"><button class="btn btn-outline-custom" onclick="showToast('More news articles will be loaded from the RSS feed','info')"><i class="bi bi-arrow-clockwise me-1"></i>Load More News</button></div>
+</div>
+</section>
+
+<!-- Community -->
+<section class="py-5">
+<div class="container">
+<p class="section-label"><i class="bi bi-people me-1"></i>COMMUNITY</p>
+<h2 class="section-title">Join the Geo4Dev Community</h2>
+<p class="section-subtitle mb-4">Connect with researchers, analysts, and practitioners working with geospatial data for development.</p>
+<div class="row g-4">
+<div class="col-md-4"><div class="community-card">
+<div class="community-icon"><i class="bi bi-person-plus" style="color:var(--accent-blue)"></i></div>
+<h5>Register as a Researcher</h5>
+<p>Create your profile, track your learning progress, and access exclusive datasets and training materials.</p>
+<button class="btn btn-primary-custom" onclick="document.getElementById('registerModal').style.display='flex'"><i class="bi bi-arrow-right me-1"></i>Sign Up Free</button>
+</div></div>
+<div class="col-md-4"><div class="community-card">
+<div class="community-icon"><i class="bi bi-chat-square-text" style="color:var(--accent-green)"></i></div>
+<h5>Discussion Forum</h5>
+<p>Ask questions, share insights, and collaborate with peers on geospatial analysis methods and data sources.</p>
+<button class="btn btn-primary-custom" onclick="showToast('Discussion forum coming soon! Register to be notified.','info')"><i class="bi bi-chat-dots me-1"></i>Join Discussion</button>
+</div></div>
+<div class="col-md-4"><div class="community-card">
+<div class="community-icon"><i class="bi bi-journal-code" style="color:var(--accent-amber)"></i></div>
+<h5>Contribute a Module</h5>
+<p>Share your expertise by developing a learning module or tutorial for the Geo4Dev platform.</p>
+<button class="btn btn-primary-custom" onclick="window.location.href='contact.html'"><i class="bi bi-pencil-square me-1"></i>Submit Proposal</button>
+</div></div>
+</div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="py-5">
+<div class="container">
+<div class="cta-banner">
+<h3>Explore Geo4Dev Learning Modules</h3>
+<p>Check out our suite of learning modules on new geospatial datasets and techniques</p>
+<a href="training.html" class="btn btn-primary-custom"><i class="bi bi-play-circle me-1"></i>Start Learning</a>
+</div>
+</div>
+</section>
+
+<!-- Tools Preview -->
+<section class="py-5" style="background:var(--bg-secondary)">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-lg-6">
+<p class="section-label"><i class="bi bi-geo-alt me-1"></i>TOOLS</p>
+<h2 class="section-title">Geographic Publication Browser</h2>
+<p style="color:var(--text-secondary)">Browse geotagged publications on an interactive map. Filter by category, search by keyword, and explore research locations worldwide.</p>
+<a href="tools.html" class="btn btn-primary-custom mt-3"><i class="bi bi-map me-1"></i>Explore the Map</a>
+</div>
+<div class="col-lg-6"><div class="glass-card mt-4 mt-lg-0" style="min-height:250px;display:flex;align-items:center;justify-content:center">
+<div class="text-center"><i class="bi bi-globe-americas" style="font-size:4rem;color:var(--accent-cyan);opacity:0.5"></i><p class="mt-2" style="color:var(--text-muted)">Interactive Map Preview</p></div>
+</div></div>
+</div>
+</div>
+</section>
+
+<!-- About -->
+<section class="py-5">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-lg-7">
+<p class="section-label">ABOUT GEO4DEV</p>
+<h2 class="section-title">Geospatial Analysis for Development</h2>
+<p style="color:var(--text-secondary)">The Geo4Dev Initiative is run in collaboration between New Light Technologies Inc., the Center for Effective Global Action (CEGA) at UC Berkeley, and 3IE. Our mission is to make geospatial data accessible to researchers, analysts, and policymakers around the world.</p>
+<a href="about.html" class="btn btn-outline-custom mt-2"><i class="bi bi-info-circle me-1"></i>Learn More</a>
+</div>
+<div class="col-lg-5">
+<div class="row g-3 mt-3 mt-lg-0">
+<div class="col-6"><div class="partner-card"><div class="partner-icon"><i class="bi bi-lightbulb" style="color:var(--accent-amber)"></i></div><h5>NLT</h5><p>New Light Technologies</p></div></div>
+<div class="col-6"><div class="partner-card"><div class="partner-icon"><i class="bi bi-bank" style="color:var(--accent-blue)"></i></div><h5>CEGA</h5><p>UC Berkeley</p></div></div>
+<div class="col-6"><div class="partner-card"><div class="partner-icon"><i class="bi bi-bar-chart-line" style="color:var(--accent-green)"></i></div><h5>3IE</h5><p>Impact Evaluation</p></div></div>
+<div class="col-6"><div class="partner-card"><div class="partner-icon"><i class="bi bi-globe2" style="color:var(--accent-cyan)"></i></div><h5>Partners</h5><p>World Bank &amp; more</p></div></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Newsletter -->
+<section class="newsletter-section" style="background:var(--bg-secondary)">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-lg-6 text-center">
+<p class="section-label">STAY UPDATED</p>
+<h3 class="section-title">Subscribe to Updates</h3>
+<p style="color:var(--text-secondary)" class="mb-3">Get notified about new datasets, training modules, and development news.</p>
+<div class="d-flex gap-0">
+<input type="email" class="form-control" id="newsletterEmail" placeholder="Enter your email...">
+<button class="btn btn-primary-custom" onclick="subscribeNewsletter()"><i class="bi bi-send me-1"></i>Subscribe</button>
+</div>
+<div class="mt-3">
+<div class="d-flex justify-content-center gap-3 flex-wrap">
+<div class="form-check form-switch"><input class="form-check-input" type="checkbox" id="alertNewDatasets" checked><label class="form-check-label" for="alertNewDatasets" style="color:var(--text-muted);font-size:0.8rem">New Datasets</label></div>
+<div class="form-check form-switch"><input class="form-check-input" type="checkbox" id="alertTraining" checked><label class="form-check-label" for="alertTraining" style="color:var(--text-muted);font-size:0.8rem">Training Updates</label></div>
+<div class="form-check form-switch"><input class="form-check-input" type="checkbox" id="alertNews"><label class="form-check-label" for="alertNews" style="color:var(--text-muted);font-size:0.8rem">News Feed</label></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+<div class="container">
+<div class="row g-4">
+<div class="col-lg-4">
+<h6><span class="brand-geo">Geo</span><span class="brand-4">4</span><span class="brand-dev">Dev</span></h6>
+<p style="color:var(--text-secondary);font-size:0.85rem">Geospatial Analysis for Development Initiative. Making geospatial data accessible for international development research.</p>
+</div>
+<div class="col-lg-2"><h6>Platform</h6>
+<div class="d-flex flex-column gap-2"><a href="dataset.html">Library</a><a href="training.html">Training</a><a href="tools.html">Tools</a><a href="conference.html">Conference</a></div>
+</div>
+<div class="col-lg-2"><h6>Community</h6>
+<div class="d-flex flex-column gap-2"><a href="#" onclick="document.getElementById('registerModal').style.display='flex';return false">Register</a><a href="contact.html">Contact</a><a href="about.html">About Us</a><a href="#" onclick="showToast('Forum coming soon!','info');return false">Forum</a></div>
+</div>
+<div class="col-lg-2"><h6>Categories</h6>
+<div class="d-flex flex-column gap-2"><a href="dataset.html?cat=environment">Environment</a><a href="dataset.html?cat=demographics">Demographics</a><a href="dataset.html?cat=health">Health</a><a href="dataset.html?cat=governance">Governance</a></div>
+</div>
+<div class="col-lg-2"><h6>Resources</h6>
+<div class="d-flex flex-column gap-2"><a href="https://www.geo4.dev" target="_blank">Geo4.dev</a><a href="https://nltgis.ai" target="_blank">nltGIS.ai</a><a href="https://earthengine.google.com" target="_blank">Earth Engine</a></div>
+</div>
+</div>
+<div class="footer-bottom d-flex justify-content-between flex-wrap">
+<span>&copy; 2026 Geo4Dev Initiative. All rights reserved.</span>
+<span>Powered by <a href="https://nltgis.ai" target="_blank">New Light Technologies</a></span>
+</div>
+</div>
+</footer>
+
+<!-- Registration Modal -->
+<div id="registerModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:2000;align-items:center;justify-content:center;backdrop-filter:blur(4px)">
+<div style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);max-width:500px;width:90%;max-height:90vh;overflow-y:auto;padding:2rem">
+<div class="d-flex justify-content-between align-items-center mb-3">
+<h4 style="margin:0;font-weight:700">Join Geo4Dev</h4>
+<button onclick="document.getElementById('registerModal').style.display='none'" style="background:none;border:none;color:var(--text-secondary);font-size:1.5rem;cursor:pointer">&times;</button>
+</div>
+<p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:1.5rem">Create your account to access training modules, track progress, and join the community.</p>
+<form class="registration-form" id="registerForm" onsubmit="handleRegister(event)">
+<div class="mb-3"><label>Full Name *</label><input type="text" class="form-control" required placeholder="Enter your full name"></div>
+<div class="mb-3"><label>Email Address *</label><input type="email" class="form-control" required placeholder="your@email.com"></div>
+<div class="mb-3"><label>Organization</label><input type="text" class="form-control" placeholder="University or Organization"></div>
+<div class="mb-3"><label>Role</label><select class="form-select"><option value="">Select your role</option><option>Researcher</option><option>Analyst</option><option>Policy Maker</option><option>Student</option><option>Developer</option><option>Other</option></select></div>
+<div class="mb-3"><label>Areas of Interest</label>
+<div class="d-flex flex-wrap gap-2 mt-1">
+<label class="filter-btn" style="cursor:pointer"><input type="checkbox" class="d-none" value="nighttime-lights"> Nighttime Lights</label>
+<label class="filter-btn" style="cursor:pointer"><input type="checkbox" class="d-none" value="remote-sensing"> Remote Sensing</label>
+<label class="filter-btn" style="cursor:pointer"><input type="checkbox" class="d-none" value="crop-mapping"> Crop Mapping</label>
+<label class="filter-btn" style="cursor:pointer"><input type="checkbox" class="d-none" value="socioeconomics"> Socioeconomics</label>
+<label class="filter-btn" style="cursor:pointer"><input type="checkbox" class="d-none" value="environment"> Environment</label>
+<label class="filter-btn" style="cursor:pointer"><input type="checkbox" class="d-none" value="health"> Health</label>
+</div>
+</div>
+<div class="mb-3">
+<p style="color:var(--text-secondary);font-size:0.8rem;margin-bottom:0.5rem">Notification Preferences:</p>
+<div class="alert-pref"><label>New training modules</label><div class="form-check form-switch mb-0"><input class="form-check-input" type="checkbox" checked></div></div>
+<div class="alert-pref"><label>New datasets added</label><div class="form-check form-switch mb-0"><input class="form-check-input" type="checkbox" checked></div></div>
+<div class="alert-pref"><label>Conference updates</label><div class="form-check form-switch mb-0"><input class="form-check-input" type="checkbox"></div></div>
+<div class="alert-pref"><label>Community discussions</label><div class="form-check form-switch mb-0"><input class="form-check-input" type="checkbox"></div></div>
+</div>
+<button type="submit" class="btn btn-primary-custom w-100" id="registerBtn"><i class="bi bi-person-check me-1"></i>Create Account</button>
+<p class="text-center mt-2" style="color:var(--text-muted);font-size:0.75rem">By registering you agree to receive Geo4Dev communications.</p>
+</form>
+</div>
+</div>
+
+<!-- Toast Container -->
+<div id="toastContainer"></div>
+
+<!-- Back to top -->
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="bi bi-chevron-up"></i></button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// Search
+function doSearch(){var q=document.getElementById('heroSearch').value.trim();if(q)window.location.href='dataset.html?q='+encodeURIComponent(q);else showToast('Please enter a search term','warning')}
+function quickSearch(t){window.location.href='dataset.html?q='+encodeURIComponent(t)}
+document.getElementById('heroSearch').addEventListener('keydown',function(e){if(e.key==='Enter')doSearch()});
+
+// Stats counter
+var counted=false;
+var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting&&!counted){counted=true;document.querySelectorAll('.stat-number').forEach(function(el){var target=parseInt(el.dataset.target);var count=0;var step=Math.ceil(target/40);var timer=setInterval(function(){count+=step;if(count>=target){count=target;clearInterval(timer)}el.textContent=count+'+'},30)})}})},{threshold:0.3});
+var statsEl=document.querySelector('.stats-section');if(statsEl)obs.observe(statsEl);
+
+// News filter
+function filterNews(cat,btn){document.querySelectorAll('#newsFilters .filter-btn').forEach(function(b){b.classList.remove('active')});btn.classList.add('active');document.querySelectorAll('.news-item').forEach(function(item){if(cat==='all'||item.dataset.cat===cat){item.style.display=''}else{item.style.display='none'}})}
+
+// Newsletter
+function subscribeNewsletter(){var email=document.getElementById('newsletterEmail').value.trim();if(!email||!email.includes('@')){showToast('Please enter a valid email address','warning');return}var prefs=[];if(document.getElementById('alertNewDatasets').checked)prefs.push('datasets');if(document.getElementById('alertTraining').checked)prefs.push('training');if(document.getElementById('alertNews').checked)prefs.push('news');showToast('Successfully subscribed! You will receive alerts for: '+prefs.join(', '),'success');document.getElementById('newsletterEmail').value=''}
+
+// Register
+function handleRegister(e){e.preventDefault();var btn=document.getElementById('registerBtn');btn.innerHTML='<span class="spinner"></span> Creating account...';btn.disabled=true;setTimeout(function(){document.getElementById('registerModal').style.display='none';btn.innerHTML='<i class="bi bi-person-check me-1"></i>Create Account';btn.disabled=false;document.getElementById('registerForm').reset();showToast('Welcome to Geo4Dev! Your account has been created successfully.','success')},2000)}
+
+// Interest toggles in register form
+document.querySelectorAll('.registration-form .filter-btn').forEach(function(btn){btn.addEventListener('click',function(){this.classList.toggle('active')})});
+
+// Toast
+function showToast(msg,type){var t=document.createElement('div');t.className='custom-toast '+type;t.textContent=msg;document.getElementById('toastContainer').appendChild(t);setTimeout(function(){t.classList.add('show')},10);setTimeout(function(){t.classList.remove('show');setTimeout(function(){t.remove()},400)},4000)}
+
+// Navbar scroll
+window.addEventListener('scroll',function(){var nav=document.querySelector('.navbar');var btt=document.getElementById('backToTop');if(window.scrollY>100)nav.classList.add('scrolled');else nav.classList.remove('scrolled');if(window.scrollY>300)btt.classList.add('show');else btt.classList.remove('show')});
+</script>
+
+  <script src="https://nltgis.ai/nltgis-platform.js"></script>
+</body>
+</html>
