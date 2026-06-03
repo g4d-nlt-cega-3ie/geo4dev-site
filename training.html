@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Training - Geo4Dev</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+<div class="container">
+<a class="navbar-brand" href="index.html"><span class="brand-geo">Geo</span><span class="brand-4">4</span><span class="brand-dev">Dev</span></a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ms-auto align-items-center">
+<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+<li class="nav-item"><a class="nav-link" href="tools.html">Tools</a></li>
+<li class="nav-item"><a class="nav-link active" href="training.html">Training</a></li>
+<li class="nav-item"><a class="nav-link" href="dataset.html">Library</a></li>
+<li class="nav-item"><a class="nav-link" href="conference.html">Conference</a></li>
+<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+<li class="nav-item ms-2"><button class="btn btn-register" onclick="document.getElementById('registerModal').style.display='flex'"><i class="bi bi-person-plus me-1"></i>Register</button></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<!-- Hero -->
+<section class="hero-section" style="min-height:400px">
+<div class="container">
+<div class="hero-content">
+<p class="section-label">LEARNING</p>
+<h1>Training Modules</h1>
+<p class="hero-subtitle">Learn geospatial analysis techniques for development research. Our modules are designed to be accessible to all audiences regardless of technical background.</p>
+<div class="d-flex gap-2 mt-3 flex-wrap">
+<button class="btn btn-primary-custom" onclick="document.getElementById('modules').scrollIntoView({behavior:'smooth'})"><i class="bi bi-play-circle me-1"></i>Browse Modules</button>
+<button class="btn btn-outline-custom" onclick="document.getElementById('registerModal').style.display='flex'"><i class="bi bi-person-plus me-1"></i>Register to Track Progress</button>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Quick Stats -->
+<section class="py-4" style="background:var(--bg-secondary)">
+<div class="container">
+<div class="row text-center">
+<div class="col-4"><div class="stat-item"><div class="stat-number" style="font-size:1.5rem;color:var(--accent-blue-light)">9</div><div class="stat-label">Modules</div></div></div>
+<div class="col-4"><div class="stat-item"><div class="stat-number" style="font-size:1.5rem;color:var(--accent-green)">Free</div><div class="stat-label">All Content</div></div></div>
+<div class="col-4"><div class="stat-item"><div class="stat-number" style="font-size:1.5rem;color:var(--accent-amber)">Python</div><div class="stat-label">GEE &amp; More</div></div></div>
+</div>
+</div>
+</section>
+
+<!-- Learning Path -->
+<section class="py-5">
+<div class="container">
+<p class="section-label"><i class="bi bi-signpost-2 me-1"></i>SUGGESTED LEARNING PATH</p>
+<h2 class="section-title">Where to Start</h2>
+<p class="section-subtitle mb-4">Follow our recommended path or jump to any module that interests you.</p>
+<div class="row">
+<div class="col-lg-8">
+<div class="learning-path">
+<div class="learning-step completed"><h6><i class="bi bi-1-circle me-1" style="color:var(--accent-green)"></i> Introduction to Remote Sensing</h6><p>Start with the basics of satellite imagery and remote sensing applications.</p></div>
+<div class="learning-step completed"><h6><i class="bi bi-2-circle me-1" style="color:var(--accent-green)"></i> Open Nighttime Lights</h6><p>Learn about nighttime lights data and the Google Earth Engine API.</p></div>
+<div class="learning-step active"><h6><i class="bi bi-3-circle me-1" style="color:var(--accent-blue)"></i> Radiance Calibrated Nighttime Lights</h6><p>Dive deeper into calibrated nighttime lights analysis.</p></div>
+<div class="learning-step"><h6><i class="bi bi-4-circle me-1"></i> Population Weighted Wealth</h6><p>Create population-weighted wealth maps and statistics.</p></div>
+<div class="learning-step"><h6><i class="bi bi-5-circle me-1"></i> Satellite Crop Type Mapping</h6><p>Build ML models to identify crop types from satellite imagery.</p></div>
+</div>
+</div>
+<div class="col-lg-4">
+<div class="glass-card">
+<h5><i class="bi bi-trophy me-1" style="color:var(--accent-amber)"></i> Your Progress</h5>
+<div class="progress-bar-container mt-3"><div class="progress-fill" style="width:22%"></div></div>
+<p style="color:var(--text-muted);font-size:0.8rem;margin-top:0.5rem">2 of 9 modules started</p>
+<div class="divider"></div>
+<p style="color:var(--text-secondary);font-size:0.85rem"><i class="bi bi-info-circle me-1"></i>Register to save your progress and get notified about new modules.</p>
+<button class="btn btn-primary-custom btn-sm w-100" onclick="document.getElementById('registerModal').style.display='flex'"><i class="bi bi-person-plus me-1"></i>Register Now</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Alert Preferences -->
+<section class="py-4" style="background:var(--bg-secondary)">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-lg-6">
+<h5><i class="bi bi-bell me-1" style="color:var(--accent-amber)"></i> Get Notified</h5>
+<p style="color:var(--text-secondary);font-size:0.9rem;margin:0">Subscribe to receive alerts when new training modules, datasets, or learning materials are added.</p>
+</div>
+<div class="col-lg-6">
+<div class="d-flex gap-2 mt-2 mt-lg-0 flex-wrap">
+<input type="email" class="form-control" id="alertEmail" placeholder="your@email.com" style="background:var(--bg-glass)!important;border:1px solid var(--border-subtle)!important;color:var(--text-primary);max-width:300px;border-radius:var(--radius-sm)">
+<button class="btn btn-primary-custom" onclick="subscribeAlerts()"><i class="bi bi-bell-fill me-1"></i>Subscribe</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Modules -->
+<section class="py-5" id="modules">
+<div class="container">
+<div class="d-flex justify-content-between align-items-center flex-wrap mb-4">
+<div>
+<p class="section-label"><i class="bi bi-collection me-1"></i>ALL MODULES</p>
+<h2 class="section-title">Training Catalog</h2>
+</div>
+<div class="d-flex flex-wrap gap-2">
+<button class="filter-btn active" onclick="filterModules('all',this)">All</button>
+<button class="filter-btn" onclick="filterModules('satellite',this)"><i class="bi bi-satellite me-1"></i>Satellite</button>
+<button class="filter-btn" onclick="filterModules('nighttime',this)"><i class="bi bi-moon-stars me-1"></i>Nighttime Lights</button>
+<button class="filter-btn" onclick="filterModules('remote-sensing',this)"><i class="bi bi-radar me-1"></i>Remote Sensing</button>
+<button class="filter-btn" onclick="filterModules('socioeconomics',this)"><i class="bi bi-graph-up me-1"></i>Socioeconomics</button>
+<button class="filter-btn" onclick="filterModules('environment',this)"><i class="bi bi-tree me-1"></i>Environment</button>
+</div>
+</div>
+<p style="color:var(--text-secondary);margin-bottom:2rem">The Geo4Dev initiative offers a suite of learning modules aimed at training researchers and analysts to use novel geographic datasets and methods. Contact <a href="mailto:info@geo4.dev" style="color:var(--accent-blue-light)">info@geo4.dev</a> to develop a module.</p>
+
+<div class="row g-4" id="moduleGrid">
+
+<!-- Module 1 -->
+<div class="col-lg-6 module-item" data-cat="satellite">
+<div class="module-card">
+<span class="module-badge satellite">Satellite</span>
+<h4>Satellite Crop Type Mapping</h4>
+<p>This tutorial provides guidance on creating a machine learning model to identify crop types from satellite imagery and other earth observation data. For users with known crop locations, it demonstrates the steps to train a model and predict crop locations for a wider area.</p>
+<div class="module-meta">
+<span><i class="bi bi-clock"></i> 3-4 hours</span>
+<span><i class="bi bi-bar-chart-steps"></i> Intermediate</span>
+<span><i class="bi bi-code-square"></i> Python</span>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<button class="btn-start" onclick="startModule('Satellite Crop Type Mapping')"><i class="bi bi-play-fill"></i> Get Started</button>
+<span style="color:var(--text-muted);font-size:0.8rem"><i class="bi bi-people me-1"></i>245 enrolled</span>
+</div>
+<div class="progress-bar-container"><div class="progress-fill" style="width:0%"></div></div>
+</div>
+</div>
+
+<!-- Module 2 -->
+<div class="col-lg-6 module-item" data-cat="remote-sensing">
+<div class="module-card">
+<span class="module-badge remote-sensing">Remote Sensing</span>
+<h4>Remote Sensing for Impact Evaluation</h4>
+<p>Geospatial data plays a significant role in supporting impact evaluations. This module covers remotely collected data from sensors, drones, and satellites, examining forest coverage, vegetation, crops, water, air quality, buildings, and infrastructure.</p>
+<div class="module-meta">
+<span><i class="bi bi-clock"></i> 4-5 hours</span>
+<span><i class="bi bi-bar-chart-steps"></i> Beginner</span>
+<span><i class="bi bi-book"></i> Theory + Practice</span>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<button class="btn-start" onclick="startModule('Remote Sensing for Impact Evaluation')"><i class="bi bi-play-fill"></i> Get Started</button>
+<span style="color:var(--text-muted);font-size:0.8rem"><i class="bi bi-people me-1"></i>312 enrolled</span>
+</div>
+<div class="progress-bar-container"><div class="progress-fill" style="width:0%"></div></div>
+</div>
+</div>
+
+<!-- Module 3 -->
+<div class="col-lg-6 module-item" data-cat="socioeconomics">
+<div class="module-card">
+<span class="module-badge socioeconomics">Socioeconomics</span>
+<h4>Population Weighted Wealth</h4>
+<p>This tutorial guides users through creation of population-weighted wealth maps and statistics, a product of collaboration between CEGA and Facebook Data for Good. Learn how population and wealth data are joined, aggregated, and weighted.</p>
+<div class="module-meta">
+<span><i class="bi bi-clock"></i> 2-3 hours</span>
+<span><i class="bi bi-bar-chart-steps"></i> Intermediate</span>
+<span><i class="bi bi-code-square"></i> Python</span>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<button class="btn-start" onclick="startModule('Population Weighted Wealth')"><i class="bi bi-play-fill"></i> Get Started</button>
+<span style="color:var(--text-muted);font-size:0.8rem"><i class="bi bi-people me-1"></i>189 enrolled</span>
+</div>
+<div class="progress-bar-container"><div class="progress-fill" style="width:0%"></div></div>
+</div>
+</div>
+
+<!-- Module 4 -->
+<div class="col-lg-6 module-item" data-cat="nighttime">
+<div class="module-card">
+<span class="module-badge nighttime">Nighttime Lights</span>
+<h4>Radiance Calibrated Nighttime Lights</h4>
+<p>Drawing from Gonzalez-Navarro and Turner's work on nighttime lights and urban growth, this tutorial focuses on analysis of data from sensors calibrated to avoid saturation of urban centers for granular economic analysis.</p>
+<div class="module-meta">
+<span><i class="bi bi-clock"></i> 3-4 hours</span>
+<span><i class="bi bi-bar-chart-steps"></i> Advanced</span>
+<span><i class="bi bi-code-square"></i> Python</span>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<button class="btn-start" onclick="startModule('Radiance Calibrated Nighttime Lights')"><i class="bi bi-play-fill"></i> Get Started</button>
+<span style="color:var(--text-muted);font-size:0.8rem"><i class="bi bi-people me-1"></i>156 enrolled</span>
+</div>
+<div class="progress-bar-container"><div class="progress-fill" style="width:0%"></div></div>
+</div>
+</div>
+
+<!-- Module 5 -->
+<div class="col-lg-6 module-item" data-cat="nighttime">
+<div class="module-card">
+<span class="module-badge nighttime">Nighttime Lights</span>
+<h4>Global Subway Systems Analysis</h4>
+<p>This tutorial makes novel data from "Subways and Urban Growth" accessible to all audiences, demonstrating code to import subway data, select locations of interest, create statistics, and build maps and visualizations.</p>
+<div class="module-meta">
+<span><i class="bi bi-clock"></i> 2-3 hours</span>
+<span><i class="bi bi-bar-chart-steps"></i> Beginner</span>
+<span><i class="bi bi-code-square"></i> Python</span>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<button class="btn-start" onclick="startModule('Global Subway Systems')"><i class="bi bi-play-fill"></i> Get Started</button>
+<span style="color:var(--text-muted);font-size:0.8rem"><i class="bi bi-people me-1"></i>134 enrolled</span>
+</div>
+<div class="progress-bar-container"><div class="progress-fill" style="width:0%"></div></div>
+</div>
+</div>
+
+<!-- Module 6 -->
+<div class="col-lg-6 module-item" data-cat="environment">
+<div class="module-card">
+<span class="module-badge environment">Environment</span>
+<h4>Deforestation and Land Cover</h4>
+<p>Information about vegetation coverage changes enables study across natural and social sciences. This tutorial provides an introduction to and demonstration of the MODIS Vegetation Continuous Fields (VCF) product.</p>
+<div class="module-meta">
+<span><i class="bi bi-clock"></i> 2-3 hours</span>
+<span><i class="bi bi-bar-chart-steps"></i> Beginner</span>
+<span><i class="bi bi-code-square"></i> GEE + Python</span>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<button class="btn-start" onclick="startModule('Deforestation and Land Cover')"><i class="bi bi-play-fill"></i> Get Started</button>
+<span style="color:var(--text-muted);font-size:0.8rem"><i class="bi bi-people me-1"></i>201 enrolled</span>
+</div>
+<div class="progress-bar-container"><div class="progress-fill" style="width:0%"></div></div>
+</div>
+</div>
+
+<!-- Module 7 -->
+<div class="col-lg-6 module-item" data-cat="nighttime">
+<div class="module-card">
+<span class="module-badge nighttime">Nighttime Lights</span>
+<h4>Open Nighttime Lights &amp; Google Earth Engine</h4>
+<p>Introduction to nighttime lights data and the Google Earth Engine API. Learn the fundamentals of accessing and analyzing nighttime light satellite data for research and development applications.</p>
+<div class="module-meta">
+<span><i class="bi bi-clock"></i> 3-4 hours</span>
+<span><i class="bi bi-bar-chart-steps"></i> Beginner</span>
+<span><i class="bi bi-code-square"></i> GEE + JavaScript</span>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<button class="btn-start" onclick="startModule('Open Nighttime Lights')"><i class="bi bi-play-fill"></i> Get Started</button>
+<span style="color:var(--text-muted);font-size:0.8rem"><i class="bi bi-people me-1"></i>387 enrolled</span>
+</div>
+<div class="progress-bar-container"><div class="progress-fill" style="width:0%"></div></div>
+</div>
+</div>
+
+<!-- Module 8 -->
+<div class="col-lg-6 module-item" data-cat="satellite">
+<div class="module-card">
+<span class="module-badge satellite">Satellite</span>
+<h4>Crop Yield Mapping Using Satellite Data</h4>
+<p>Create a machine learning model to predict maize yields from satellite imagery and earth observation data. Training uses variety trial data collected by CIMMYT for practical crop yield prediction.</p>
+<div class="module-meta">
+<span><i class="bi bi-clock"></i> 4-5 hours</span>
+<span><i class="bi bi-bar-chart-steps"></i> Advanced</span>
+<span><i class="bi bi-code-square"></i> Python + ML</span>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<button class="btn-start" onclick="startModule('Crop Yield Mapping')"><i class="bi bi-play-fill"></i> Get Started</button>
+<span style="color:var(--text-muted);font-size:0.8rem"><i class="bi bi-people me-1"></i>167 enrolled</span>
+</div>
+<div class="progress-bar-container"><div class="progress-fill" style="width:0%"></div></div>
+</div>
+</div>
+
+<!-- Module 9 -->
+<div class="col-lg-6 module-item" data-cat="environment">
+<div class="module-card">
+<span class="module-badge environment">Environment</span>
+<h4>Woody Cover Estimation from Remote Sensing</h4>
+<p>Create a predictive modeling workflow to quantify woody cover from remote sensing datasets including Airborne LiDAR and Synthetic Aperture Radar (SAR), inspired by Wessels et al. (2023) research.</p>
+<div class="module-meta">
+<span><i class="bi bi-clock"></i> 3-4 hours</span>
+<span><i class="bi bi-bar-chart-steps"></i> Advanced</span>
+<span><i class="bi bi-code-square"></i> Python + R</span>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<button class="btn-start" onclick="startModule('Woody Cover Estimation')"><i class="bi bi-play-fill"></i> Get Started</button>
+<span style="color:var(--text-muted);font-size:0.8rem"><i class="bi bi-people me-1"></i>98 enrolled</span>
+</div>
+<div class="progress-bar-container"><div class="progress-fill" style="width:0%"></div></div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="py-5" style="background:var(--bg-secondary)">
+<div class="container">
+<div class="cta-banner">
+<h3><i class="bi bi-pencil-square me-2"></i>Want to Contribute a Module?</h3>
+<p>Share your expertise by developing a learning module or tutorial for the Geo4Dev platform.</p>
+<a href="contact.html" class="btn btn-primary-custom"><i class="bi bi-envelope me-1"></i>Contact Us</a>
+</div>
+</div>
+</section>
+
+<!-- Registration Modal -->
+<div id="registerModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:2000;align-items:center;justify-content:center;backdrop-filter:blur(4px)">
+<div style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);max-width:500px;width:90%;max-height:90vh;overflow-y:auto;padding:2rem">
+<div class="d-flex justify-content-between align-items-center mb-3">
+<h4 style="margin:0;font-weight:700"><i class="bi bi-mortarboard me-2"></i>Register for Training</h4>
+<button onclick="document.getElementById('registerModal').style.display='none'" style="background:none;border:none;color:var(--text-secondary);font-size:1.5rem;cursor:pointer">&times;</button>
+</div>
+<p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:1.5rem">Create an account to track progress, earn certificates, and get notifications.</p>
+<form class="registration-form" onsubmit="handleTrainingRegister(event)">
+<div class="mb-3"><label>Full Name *</label><input type="text" class="form-control" required placeholder="Your name"></div>
+<div class="mb-3"><label>Email *</label><input type="email" class="form-control" required placeholder="your@email.com"></div>
+<div class="mb-3"><label>Experience Level</label><select class="form-select"><option value="">Select level</option><option>Beginner - New to geospatial data</option><option>Intermediate - Some experience</option><option>Advanced - Experienced analyst</option></select></div>
+<div class="mb-3"><label>Interests</label>
+<div class="d-flex flex-wrap gap-2 mt-1">
+<label class="filter-btn" style="cursor:pointer"><input type="checkbox" class="d-none"> Nighttime Lights</label>
+<label class="filter-btn" style="cursor:pointer"><input type="checkbox" class="d-none"> Remote Sensing</label>
+<label class="filter-btn" style="cursor:pointer"><input type="checkbox" class="d-none"> Crop Mapping</label>
+<label class="filter-btn" style="cursor:pointer"><input type="checkbox" class="d-none"> ML/AI</label>
+</div>
+</div>
+<div class="mb-3">
+<div class="alert-pref"><label>New module alerts</label><div class="form-check form-switch mb-0"><input class="form-check-input" type="checkbox" checked></div></div>
+<div class="alert-pref"><label>Progress reminders</label><div class="form-check form-switch mb-0"><input class="form-check-input" type="checkbox" checked></div></div>
+<div class="alert-pref"><label>Certificate notifications</label><div class="form-check form-switch mb-0"><input class="form-check-input" type="checkbox" checked></div></div>
+</div>
+<button type="submit" class="btn btn-primary-custom w-100" id="regBtn"><i class="bi bi-person-check me-1"></i>Create Account</button>
+</form>
+</div>
+</div>
+
+<!-- Module Detail Modal -->
+<div id="moduleModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:2000;align-items:center;justify-content:center;backdrop-filter:blur(4px)">
+<div style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);max-width:600px;width:90%;max-height:90vh;overflow-y:auto;padding:2rem">
+<div class="d-flex justify-content-between align-items-center mb-3">
+<h4 id="modalModuleName" style="margin:0;font-weight:700"></h4>
+<button onclick="document.getElementById('moduleModal').style.display='none'" style="background:none;border:none;color:var(--text-secondary);font-size:1.5rem;cursor:pointer">&times;</button>
+</div>
+<div class="divider"></div>
+<p style="color:var(--text-secondary);font-size:0.9rem" id="modalModuleDesc"></p>
+<div class="glass-card mb-3">
+<h6><i class="bi bi-list-check me-1"></i> What You Will Learn</h6>
+<div id="modalObjectives"></div>
+</div>
+<div class="d-flex gap-2">
+<button class="btn btn-primary-custom" onclick="showToast('Module tutorial opening... Redirecting to tutorial notebook.','success');document.getElementById('moduleModal').style.display='none'"><i class="bi bi-play-circle me-1"></i>Start Module</button>
+<button class="btn btn-outline-custom" onclick="showToast('Module bookmarked for later!','info');document.getElementById('moduleModal').style.display='none'"><i class="bi bi-bookmark me-1"></i>Save for Later</button>
+</div>
+</div>
+</div>
+
+<!-- Toast -->
+<div id="toastContainer"></div>
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="bi bi-chevron-up"></i></button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// Filter
+function filterModules(cat,btn){document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active')});btn.classList.add('active');document.querySelectorAll('.module-item').forEach(function(item){if(cat==='all'||item.dataset.cat===cat){item.style.display='';item.querySelector('.module-card').style.animation='fadeInUp 0.3s ease'}else{item.style.display='none'}})}
+
+// Start module
+var moduleData={'Satellite Crop Type Mapping':{desc:'This tutorial walks through creating a machine learning model to identify crop types from satellite imagery.',objectives:['Access and prepare satellite imagery data','Train a classification model on known crop samples','Predict crop types for a wider area of interest','Validate and assess model accuracy']},'Remote Sensing for Impact Evaluation':{desc:'Learn how geospatial data supports impact evaluations and policy decisions.',objectives:['Understand remote sensing fundamentals','Access data from various satellite sensors','Combine geographical data for spatial analysis','Create visualizations for decision-makers']},'Population Weighted Wealth':{desc:'Create population-weighted wealth maps combining CEGA and Facebook Data for Good.',objectives:['Join population and wealth data by location','Aggregate data to administrative areas','Apply population weighting methods','Export results as maps and statistics']},'Radiance Calibrated Nighttime Lights':{desc:'Analyze calibrated nighttime lights data following Gonzalez-Navarro and Turner methodology.',objectives:['Understand radiance calibration concepts','Access DMSP and VIIRS nighttime light data','Perform time series analysis','Measure economic activity through light intensity']}};
+function startModule(name){var data=moduleData[name];if(data){document.getElementById('modalModuleName').textContent=name;document.getElementById('modalModuleDesc').textContent=data.desc;var obj='';data.objectives.forEach(function(o){obj+='<div style="padding:0.4rem 0;color:var(--text-secondary);font-size:0.85rem"><i class="bi bi-check2-circle me-2" style="color:var(--accent-green)"></i>'+o+'</div>'});document.getElementById('modalObjectives').innerHTML=obj;document.getElementById('moduleModal').style.display='flex'}else{showToast('Module "'+name+'" selected! Register to track your progress.','info')}}
+
+// Register
+function handleTrainingRegister(e){e.preventDefault();var btn=document.getElementById('regBtn');btn.innerHTML='<span class="spinner"></span> Creating...';btn.disabled=true;setTimeout(function(){document.getElementById('registerModal').style.display='none';btn.innerHTML='<i class="bi bi-person-check me-1"></i>Create Account';btn.disabled=false;showToast('Account created! You can now track your learning progress.','success')},1500)}
+
+// Interest toggles
+document.querySelectorAll('.registration-form .filter-btn').forEach(function(b){b.addEventListener('click',function(){this.classList.toggle('active')})});
+
+// Alerts
+function subscribeAlerts(){var email=document.getElementById('alertEmail').value.trim();if(!email||!email.includes('@')){showToast('Please enter a valid email','warning');return}showToast('Subscribed! You will receive alerts for new training content.','success');document.getElementById('alertEmail').value=''}
+
+// Toast
+function showToast(msg,type){var t=document.createElement('div');t.className='custom-toast '+type;t.textContent=msg;document.getElementById('toastContainer').appendChild(t);setTimeout(function(){t.classList.add('show')},10);setTimeout(function(){t.classList.remove('show');setTimeout(function(){t.remove()},400)},4000)}
+
+// Navbar/back-to-top
+window.addEventListener('scroll',function(){var n=document.querySelector('.navbar');var b=document.getElementById('backToTop');if(window.scrollY>100)n.classList.add('scrolled');else n.classList.remove('scrolled');if(window.scrollY>300)b.classList.add('show');else b.classList.remove('show')});
+</script>
+</body>
+  </html>
