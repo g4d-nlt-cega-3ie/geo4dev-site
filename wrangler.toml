@@ -1,11 +1,3 @@
 name = "geo4dev-site"
 compatibility_date = "2024-11-01"
 pages_build_output_dir = "dist"
-
-# Bind a D1 database for the signups mini-CRM.
-# Create it once with:  wrangler d1 create geo4dev-signups
-# then paste the returned database_id below.
-[[d1_databases]]
-binding = "DB"
-database_name = "geo4dev-signups"
-database_id = "REPLACE_WITH_D1_DATABASE_ID"
