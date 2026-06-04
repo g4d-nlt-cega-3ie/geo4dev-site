@@ -1,0 +1,58 @@
+[
+  {
+    "category": "Health & Emergency Response",
+    "subcategories": [
+      "Epidemiology",
+      "Natural/Man-Made Disasters"
+    ]
+  },
+  {
+    "category": "Environment",
+    "subcategories": [
+      "Oceans",
+      "Inland Water",
+      "Terrestrial",
+      "Atmospheric",
+      "Environmental Protection"
+    ]
+  },
+  {
+    "category": "Governance & Management",
+    "subcategories": [
+      "Infrastructure and Transportation",
+      "Enhanced Economic Activities",
+      "Boundaries"
+    ]
+  },
+  {
+    "category": "Land Use & Land Cover",
+    "subcategories": [
+      "LULC",
+      "Urbanization Process",
+      "Automatic Crop Mapping/AG"
+    ]
+  },
+  {
+    "category": "Demographics & Socioeconomics",
+    "subcategories": [
+      "Demographics",
+      "Socioeconomics",
+      "Settlement Dynamics"
+    ]
+  },
+  {
+    "category": "Monitoring & Evaluation",
+    "subcategories": [
+      "Natural Capital",
+      "Economic Activity",
+      "Human Well-Being",
+      "Governance"
+    ]
+  },
+  {
+    "category": "Data Catalog",
+    "subcategories": [
+      "Data Catalog"
+    ]
+  }
+]

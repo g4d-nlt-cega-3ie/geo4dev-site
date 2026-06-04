@@ -1,0 +1,5 @@
+# Default review owner for all changes
+* @ghermay
+
+# Catalog content changes get explicit review
+/content/ @ghermay
