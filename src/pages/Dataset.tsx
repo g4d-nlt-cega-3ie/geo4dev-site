@@ -1,5 +1,8 @@
+import { Suspense, lazy } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { bySlug } from '../lib/catalog'
+
+const GeoMap = lazy(() => import('../map/GeoMap'))
 
 export default function Dataset() {
   const { slug } = useParams()
@@ -17,6 +20,7 @@ export default function Dataset() {
   }
 
   const primaryLink = d.stable_link || d.source_url || d.resources.find((r) => r.url)?.url || null
+  const located = d.lat != null && d.lng != null
 
   return (
     <main className="page section">
@@ -31,15 +35,28 @@ export default function Dataset() {
         {d.description && <p className="desc">{d.description}</p>}
 
         {primaryLink && (
-          <a className="btn" href={primaryLink} target="_blank" rel="noreferrer">
-            Open source ↗
-          </a>
+          <a className="btn" href={primaryLink} target="_blank" rel="noreferrer">Open source ↗</a>
+        )}
+
+        {located && (
+          <div className="detail-map">
+            <div className="detail-map-head">
+              <span className="eyebrow">Location</span>
+              <Link to="/map" className="btn ghost" style={{ fontSize: '0.82rem' }}>Open full map →</Link>
+            </div>
+            <div style={{ height: 320, borderRadius: 'var(--radius)', overflow: 'hidden', border: '1px solid var(--line)' }}>
+              <Suspense fallback={<div className="muted" style={{ padding: '1rem' }}>Loading map…</div>}>
+                <GeoMap points={[d as any]} embedded height="320px" />
+              </Suspense>
+            </div>
+          </div>
         )}
 
         <dl className="kv">
           {d.author && (<><dt>Author</dt><dd>{d.author}</dd></>)}
           {d.publishing_org && (<><dt>Organization</dt><dd>{d.publishing_org}</dd></>)}
           {d.country && (<><dt>Country</dt><dd>{d.country}{d.region_city ? ` · ${d.region_city}` : ''}</dd></>)}
+          {located && (<><dt>Coordinates</dt><dd>{d.lat!.toFixed(3)}, {d.lng!.toFixed(3)}</dd></>)}
           {d.license && (<><dt>License</dt><dd>{d.license}</dd></>)}
           {d.tags.length > 0 && (<><dt>Tags</dt><dd>{d.tags.join(', ')}</dd></>)}
         </dl>
@@ -51,9 +68,7 @@ export default function Dataset() {
               <div className="res-item" key={i}>
                 <span className="fmt">{r.format || 'LINK'}</span>
                 {r.url ? (
-                  <a href={r.url} target="_blank" rel="noreferrer">
-                    {r.name || r.url}
-                  </a>
+                  <a href={r.url} target="_blank" rel="noreferrer">{r.name || r.url}</a>
                 ) : (
                   <span>{r.name || 'Resource'}</span>
                 )}

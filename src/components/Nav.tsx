@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { NavLink, Link, useNavigate } from 'react-router-dom'
 import { taxonomy, categoryCounts } from '../lib/catalog'
-import { LOGO_GEO4DEV } from '../lib/assets'
+import { LOGO_GEO4DEV, LOGO_GEO4DEV_LIGHT } from '../lib/assets'
+import ThemeToggle from './ThemeToggle'
 
 export default function Nav() {
   const [openCats, setOpenCats] = useState(false)
@@ -17,7 +18,8 @@ export default function Nav() {
     <header className="nav">
       <div className="container nav-inner">
         <Link to="/" className="brand">
-          <img src={LOGO_GEO4DEV} alt="Geo4Dev" className="brand-logo" />
+          <img src={LOGO_GEO4DEV} alt="Geo4Dev" className="brand-logo for-dark" />
+          <img src={LOGO_GEO4DEV_LIGHT} alt="Geo4Dev" className="brand-logo for-light" />
         </Link>
         <nav className="nav-links">
           <div
@@ -48,8 +50,11 @@ export default function Nav() {
           <NavLink to="/library">Library</NavLink>
           <NavLink to="/map">Map</NavLink>
           <NavLink to="/training">Training</NavLink>
+          <NavLink to="/news">News</NavLink>
+          <NavLink to="/contribute">Contribute</NavLink>
           <NavLink to="/about">About</NavLink>
-          <NavLink to="/contact" className="nav-cta">Get updates</NavLink>
+          <ThemeToggle />
+          <NavLink to="/contact" className="nav-cta">Get alerts</NavLink>
         </nav>
       </div>
     </header>

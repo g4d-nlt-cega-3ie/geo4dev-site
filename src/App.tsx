@@ -8,6 +8,9 @@ import Dataset from './pages/Dataset'
 import About from './pages/About'
 import Training from './pages/Training'
 import Contact from './pages/Contact'
+import Contribute from './pages/Contribute'
+import Releases from './pages/Releases'
+import News from './pages/News'
 
 const MapPage = lazy(() => import('./pages/MapPage'))
 
@@ -29,6 +32,9 @@ export default function App() {
         />
         <Route path="/training" element={<Training />} />
         <Route path="/about" element={<About />} />
+        <Route path="/contribute" element={<Contribute />} />
+        <Route path="/releases" element={<Releases />} />
+        <Route path="/news" element={<News />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />

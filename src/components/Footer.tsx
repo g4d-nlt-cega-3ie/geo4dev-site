@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { PARTNERS, NLT_LOGO, GITHUB_OPEN_DATA, GITHUB_LEGACY, LINKEDIN_GROUP } from '../lib/assets'
+import { PARTNERS, NLT_LOGO, GITHUB_OPEN_DATA, GITHUB_LEGACY } from '../lib/assets'
 
 export default function Footer() {
   return (
@@ -32,15 +32,16 @@ export default function Footer() {
             <Link to="/library">Library</Link>
             <Link to="/map">Map</Link>
             <Link to="/training">Training</Link>
+            <Link to="/news">News &amp; publications</Link>
+            <Link to="/releases">Release notes</Link>
             <Link to="/about">About</Link>
-            <Link to="/contact">Conference</Link>
           </div>
           <div className="fcol">
             <h4>Open science</h4>
+            <Link to="/contribute">How to contribute</Link>
             <a href={GITHUB_OPEN_DATA} target="_blank" rel="noreferrer">Contribute on GitHub ↗</a>
             <a href={GITHUB_LEGACY} target="_blank" rel="noreferrer">Geo4Dev source ↗</a>
-            <a href={LINKEDIN_GROUP} target="_blank" rel="noreferrer">LinkedIn group ↗</a>
-            <Link to="/contact">Suggest a project</Link>
+            <Link to="/contact">Get alerts</Link>
           </div>
         </div>
 

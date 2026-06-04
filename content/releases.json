@@ -1,0 +1,25 @@
+[
+  {
+    "version": "1.0",
+    "date": "June 2026",
+    "title": "New Geo4Dev platform",
+    "notes": [
+      "Rebuilt Geo4Dev as a fast, open static platform hosted on Cloudflare with content version-controlled on GitHub.",
+      "Migrated the full catalog of 129 curated datasets, publications, and training resources from the legacy system.",
+      "New full-text search and faceted browsing by category and content type.",
+      "Interactive GIS map with selectable base layers (Dark, Light, OpenStreetMap, Satellite), in-map detail popups, and point/outline styling controls.",
+      "Dataset pages now include an embedded location map for geolocated records.",
+      "Dark, gray, and light display themes."
+    ]
+  },
+  {
+    "version": "0.9",
+    "date": "May 2026",
+    "title": "Open contribution rails",
+    "notes": [
+      "Public open-data repository opened for community dataset and publication contributions.",
+      "GitHub Discussions enabled for questions, proposals, and feedback.",
+      "Email alerts so members can follow new additions and releases."
+    ]
+  }
+]

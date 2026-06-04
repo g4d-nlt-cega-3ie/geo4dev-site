@@ -26,7 +26,7 @@ export default function Home() {
       <section className="hero">
         <div className="container hero-inner">
           <span className="eyebrow">Geospatial Analysis for Development Initiative</span>
-          <h1>Geospatial evidence for development &amp; impact.</h1>
+          <h1>Geospatial evidence for <span className="accent">development</span> &amp; impact.</h1>
           <p className="lead">
             Search timely, curated datasets, publications, and training — connecting
             remote sensing and geospatial methods to real-world development questions.

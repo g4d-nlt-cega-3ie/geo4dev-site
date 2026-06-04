@@ -1,7 +1,8 @@
 // Authentic Geo4Dev branding. These load from the project's live asset hosts.
 // To self-host later: download each, drop into /public/logos/, and swap to
 // e.g. '/logos/nlt.png'.
-export const LOGO_GEO4DEV = 'https://www.geo4.dev/logos/geo4dev_lightbg.svg'
+export const LOGO_GEO4DEV = '/logos/geo4dev-dark.svg'
+export const LOGO_GEO4DEV_LIGHT = '/logos/geo4dev-light.svg'
 
 export const PARTNERS = [
   { name: 'CEGA', href: 'https://cega.berkeley.edu', logo: 'https://geo4dev-resources.s3.amazonaws.com/logos/cega.png' },

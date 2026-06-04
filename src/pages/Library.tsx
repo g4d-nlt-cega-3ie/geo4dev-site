@@ -1,5 +1,5 @@
 import { useMemo, useState, useEffect } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { useSearchParams, Link } from 'react-router-dom'
 import SearchBar from '../components/SearchBar'
 import Filters from '../components/Filters'
 import DatasetCard from '../components/DatasetCard'
@@ -54,8 +54,9 @@ export default function Library() {
             }}
           />
           <div>
-            <div className="results-meta">
-              {results.length} {results.length === 1 ? 'entry' : 'entries'}
+            <div className="results-meta results-meta-row">
+              <span>{results.length} {results.length === 1 ? 'entry' : 'entries'}</span>
+              <Link to="/map" className="btn ghost" style={{ fontSize: '0.82rem' }}>Map view →</Link>
             </div>
             <div className="card-list">
               {results.map((d) => (
