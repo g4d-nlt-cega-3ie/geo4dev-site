@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import eventsData from '../../content/events.json'
 import { GITHUB_OPEN_DATA } from '../lib/assets'
+import PageHeader from '../components/PageHeader'
 
 interface Ev { year: string; date: string; title: string; host: string; blurb: string; url: string }
 const events = eventsData.events as Ev[]
@@ -11,8 +12,11 @@ export default function Events() {
     <main className="page section">
       <div className="container">
         <div className="prose">
-          <span className="eyebrow">Events</span>
-          <h2>Geo4Dev convenings & workshops</h2>
+          <PageHeader
+            eyebrow="Events"
+            title="Geo4Dev convenings & workshops"
+            image="/images/hands-globe.jpg"
+          />
           <p>
             The Geo4Dev Initiative has brought researchers, practitioners, and agencies together
             through annual symposia and hands-on workshops on applying geospatial and

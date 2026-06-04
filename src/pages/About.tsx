@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { GITHUB_OPEN_DATA } from '../lib/assets'
+import PageHeader from '../components/PageHeader'
 
 const LOGOS: Record<string, string> = {
   NLT: 'https://geo4dev-resources.s3.amazonaws.com/logos/nlt.png',
@@ -39,8 +40,11 @@ export default function About() {
     <main className="page section">
       <div className="container">
         <div className="prose">
-          <span className="eyebrow">About</span>
-          <h2>An open library for geospatial development evidence</h2>
+          <PageHeader
+            eyebrow="About"
+            title="An open library for geospatial development evidence"
+            image="/images/hero-earth.jpg"
+          />
           <p>
             Geo4Dev brings together geospatial datasets, peer-reviewed publications, and
             training resources that connect satellite and remote-sensing data to questions in

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { GITHUB_OPEN_DATA } from '../lib/assets'
+import PageHeader from '../components/PageHeader'
 
 const SITE_REPO = 'https://github.com/g4d-nlt-cega-3ie/geo4dev-site'
 const DISCUSSIONS = 'https://github.com/g4d-nlt-cega-3ie/open-data/discussions'
@@ -9,8 +10,11 @@ export default function Contribute() {
     <main className="page section">
       <div className="container">
         <div className="prose">
-          <span className="eyebrow">Contribute</span>
-          <h2>Help grow the open library</h2>
+          <PageHeader
+            eyebrow="Contribute"
+            title="Help grow the open library"
+            image="/images/landsat-mississippi.jpg"
+          />
           <p>
             Geo4Dev is built in the open. Whether you're a researcher with a publication to share
             or a developer who wants to improve the platform, there's a path for you. Pick the one

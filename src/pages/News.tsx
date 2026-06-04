@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import newsData from '../../content/news.json'
+import PageHeader from '../components/PageHeader'
 
 interface Source { id: string; name: string; site: string | null; searchMore?: string }
 interface Item { source: string; kind?: string; date?: string; title: string; url: string; description: string }
@@ -16,8 +17,11 @@ export default function News() {
     <main className="page section">
       <div className="container">
         <div className="prose">
-          <span className="eyebrow">News &amp; Publications</span>
-          <h2>Geo4Dev in the literature and the field</h2>
+          <PageHeader
+            eyebrow="News & Publications"
+            title="Geo4Dev in the literature and the field"
+            image="/images/earth-asia.jpg"
+          />
           <p>
             A curated record of articles, events, workshops, talks, and coverage from across the
             Geo4Dev Initiative and its members — CEGA, 3ie, and New Light Technologies — plus

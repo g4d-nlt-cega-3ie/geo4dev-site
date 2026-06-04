@@ -338,3 +338,19 @@ h3 { font-size: 1.2rem; }
 .event-host { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-dim); }
 .event-link { font-family: var(--mono); font-size: 0.74rem; color: var(--accent-light); }
 @media (max-width: 560px) { .event-item { grid-template-columns: 1fr; gap: 0.4rem; } }
+
+/* ============ Page header banners ============ */
+.page-header { position: relative; overflow: hidden; isolation: isolate; border: 1px solid var(--line); border-radius: var(--radius); padding: 2.7rem 2rem; margin-bottom: 1.8rem; }
+.page-header::before { content: ''; position: absolute; inset: 0; z-index: -2; background-image: var(--ph-image); background-size: cover; background-position: center; }
+.page-header::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(6,11,24,0.93) 0%, rgba(6,11,24,0.6) 55%, rgba(6,11,24,0.4) 100%); }
+.page-header .eyebrow { color: #6aa8ff; }
+.page-header h1 { color: #f8fafc; font-size: clamp(1.8rem, 3.4vw, 2.7rem); margin: 0.25rem 0 0.3rem; }
+.page-header .ph-sub { color: rgba(241,245,249,0.84); max-width: 620px; margin: 0; font-size: 1.02rem; }
+
+/* ============ Home: Earth observed gallery ============ */
+.obs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.85rem; }
+.obs-tile { position: relative; aspect-ratio: 4 / 3; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); margin: 0; }
+.obs-tile img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.35s ease; }
+.obs-tile:hover img { transform: scale(1.06); }
+.obs-cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 0.7rem 0.85rem; font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.04em; text-transform: uppercase; color: rgba(241,245,249,0.8); background: linear-gradient(transparent, rgba(6,11,24,0.9)); }
+.obs-cap b { display: block; font-family: var(--display); font-weight: 600; font-size: 0.96rem; letter-spacing: 0; text-transform: none; color: #f8fafc; margin-bottom: 0.1rem; }

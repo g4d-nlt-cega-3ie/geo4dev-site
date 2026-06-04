@@ -85,6 +85,35 @@ export default function Home() {
         </section>
       )}
 
+      <section className="section section-alt">
+        <div className="container">
+          <div className="section-head">
+            <div>
+              <span className="eyebrow">From orbit</span>
+              <h2>Earth, observed</h2>
+            </div>
+          </div>
+          <div className="obs-grid">
+            <figure className="obs-tile">
+              <img src="/images/landsat-mississippi.jpg" alt="Landsat view of the meandering Mississippi River" loading="lazy" />
+              <figcaption className="obs-cap"><b>Meandering Mississippi</b>Landsat false-color</figcaption>
+            </figure>
+            <figure className="obs-tile">
+              <img src="/images/india-lights.jpg" alt="Night-time city lights across the Indian subcontinent" loading="lazy" />
+              <figcaption className="obs-cap"><b>India at night</b>VIIRS night lights</figcaption>
+            </figure>
+            <figure className="obs-tile">
+              <img src="/images/landsat-seaice.jpg" alt="False-color satellite view of coastal sea ice" loading="lazy" />
+              <figcaption className="obs-cap"><b>Coastal sea ice</b>Landsat false-color</figcaption>
+            </figure>
+            <figure className="obs-tile">
+              <img src="/images/landsat-desert.jpg" alt="Satellite view of desert drainage channels" loading="lazy" />
+              <figcaption className="obs-cap"><b>Desert watersheds</b>Landsat true-color</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
       <section className="section section-partners">
         <div className="container">
           <span className="eyebrow" style={{ textAlign: 'center', display: 'block' }}>In collaboration</span>
