@@ -1,0 +1,11 @@
+{
+  "events": [
+    { "year": "2022", "date": "Summer 2022", "title": "Geo4Dev Summer Workshop Series", "host": "CEGA", "blurb": "A multi-session summer series of hands-on geospatial workshops for development researchers.", "url": "https://cega.berkeley.edu/event/geospatial-analysis-for-development-geo4dev-summer-2022-workshop-series/" },
+    { "year": "2020", "date": "Dec 2020", "title": "Geo4Dev 2020 Symposium & Workshop", "host": "CEGA · 3ie", "blurb": "The annual symposium and workshop, held online, bringing together researchers and practitioners working with geospatial data for development.", "url": "https://cega.berkeley.edu/event/geospatial-analysis-for-development-2020-symposium-and-workshop/" },
+    { "year": "2020", "date": "Jun 2020", "title": "Geo4Dev June Summer Workshop", "host": "CEGA", "blurb": "A summer workshop on open geospatial data and analysis methods.", "url": "https://cega.berkeley.edu/event/geospatial-analysis-for-development-geo4dev-workshop/" },
+    { "year": "2019", "date": "2019", "title": "Geo4Dev Workshop: Crop Yield Mapping Using Satellite Data", "host": "CEGA", "blurb": "A focused, hands-on workshop on estimating crop yields from satellite imagery.", "url": "https://cega.berkeley.edu/event/geo4dev-workshop-crop-yield-mapping-using-satellite-data/" },
+    { "year": "2019", "date": "2019", "title": "Geo4Dev DC Workshop: Woody Cover Estimation in Brazil using SAR", "host": "CEGA · NLT · 3ie", "blurb": "A Washington, DC workshop on woody-cover estimation in Brazil using Synthetic Aperture Radar.", "url": "https://www.3ieimpact.org/events/geo4dev-workshop-woody-cover-estimation-brazil-using-synthetic-aperture-radar" },
+    { "year": "2018", "date": "Nov 2018", "title": "Geo4Dev 2018 Conference", "host": "CEGA", "blurb": "A convening of geospatial experts focused on innovative analysis for disaster and humanitarian response.", "url": "https://cega.berkeley.edu/event/geo4dev-2018/" },
+    { "year": "2017", "date": "2017", "title": "Geo4Dev 2017 Symposium & Workshop", "host": "CEGA", "blurb": "The inaugural Geo4Dev symposium and workshop that launched the annual convening.", "url": "https://cega.berkeley.edu/event/geo4dev-2017/" }
+  ]
+}

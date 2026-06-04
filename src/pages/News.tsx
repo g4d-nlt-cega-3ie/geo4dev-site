@@ -70,6 +70,9 @@ export default function News() {
             >
               Search 3ie ↗
             </a>
+            <a href="https://newlighttechnologies.com/blog/all" target="_blank" rel="noreferrer">
+              Search NLT ↗
+            </a>
           </div>
         </div>
       </div>

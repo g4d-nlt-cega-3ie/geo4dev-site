@@ -51,6 +51,7 @@ export default function Nav() {
           <NavLink to="/map">Map</NavLink>
           <NavLink to="/training">Training</NavLink>
           <NavLink to="/news">News</NavLink>
+          <NavLink to="/events">Events</NavLink>
           <NavLink to="/contribute">Contribute</NavLink>
           <NavLink to="/about">About</NavLink>
           <ThemeToggle />

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { PARTNERS, NLT_LOGO, GITHUB_OPEN_DATA, GITHUB_LEGACY } from '../lib/assets'
+import { PARTNERS, NLT_LOGO, GITHUB_OPEN_DATA } from '../lib/assets'
 
 export default function Footer() {
   return (
@@ -32,6 +32,7 @@ export default function Footer() {
             <Link to="/library">Library</Link>
             <Link to="/map">Map</Link>
             <Link to="/training">Training</Link>
+            <Link to="/events">Events</Link>
             <Link to="/news">News &amp; publications</Link>
             <Link to="/releases">Release notes</Link>
             <Link to="/about">About</Link>
@@ -40,7 +41,7 @@ export default function Footer() {
             <h4>Open science</h4>
             <Link to="/contribute">How to contribute</Link>
             <a href={GITHUB_OPEN_DATA} target="_blank" rel="noreferrer">Contribute on GitHub ↗</a>
-            <a href={GITHUB_LEGACY} target="_blank" rel="noreferrer">Geo4Dev source ↗</a>
+            <a href="https://newlighttechnologies.com/blog/all" target="_blank" rel="noreferrer">Search NLT ↗</a>
             <Link to="/contact">Get alerts</Link>
           </div>
         </div>

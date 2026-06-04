@@ -11,6 +11,7 @@ import Contact from './pages/Contact'
 import Contribute from './pages/Contribute'
 import Releases from './pages/Releases'
 import News from './pages/News'
+import Events from './pages/Events'
 
 const MapPage = lazy(() => import('./pages/MapPage'))
 
@@ -35,6 +36,7 @@ export default function App() {
         <Route path="/contribute" element={<Contribute />} />
         <Route path="/releases" element={<Releases />} />
         <Route path="/news" element={<News />} />
+        <Route path="/events" element={<Events />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
