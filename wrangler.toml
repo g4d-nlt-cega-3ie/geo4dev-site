@@ -6,3 +6,8 @@ pages_build_output_dir = "dist"
 #   - D1 binding:  DB           → database "geo4dev-signups"
 #   - Variable:    ISSUE_REPO   → "g4d-nlt-cega-3ie/open-data"
 #   - Secret:      GITHUB_TOKEN → fine-grained token, Issues read+write on ISSUE_REPO
+
+[[d1_databases]]
+binding = "DB"
+database_name = "geo4dev-signups"
+database_id = "81e0e005-9606-4e91-8923-776b0826b373"
