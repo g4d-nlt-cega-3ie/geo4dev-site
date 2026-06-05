@@ -8,6 +8,11 @@ on:
 permissions:
   contents: read
 
+# Opt JS actions into Node 24 to clear the Node 20 deprecation notice.
+# If a deploy ever fails right after this change, remove the next two lines.
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -15,7 +20,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
       - run: npm ci
       - run: npm run build
