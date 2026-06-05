@@ -9,6 +9,7 @@ export const taxonomy = rawTaxonomy as TaxonomyGroup[]
 catalog.sort((a, b) => (a.title || '').localeCompare(b.title || ''))
 
 export const bySlug = new Map(catalog.map((d) => [d.slug, d]))
+export const byId = new Map(catalog.map((d) => [d.id, d]))
 
 export const CONTENT_TYPES = Array.from(
   new Set(catalog.map((d) => d.content_type).filter(Boolean) as string[]),
