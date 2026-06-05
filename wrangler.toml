@@ -1,3 +1,8 @@
 name = "geo4dev-site"
 compatibility_date = "2024-11-01"
 pages_build_output_dir = "dist"
+
+# Runtime config is set in the Cloudflare Pages dashboard (Settings → Functions / Variables):
+#   - D1 binding:  DB           → database "geo4dev-signups"
+#   - Variable:    ISSUE_REPO   → "g4d-nlt-cega-3ie/open-data"
+#   - Secret:      GITHUB_TOKEN → fine-grained token, Issues read+write on ISSUE_REPO

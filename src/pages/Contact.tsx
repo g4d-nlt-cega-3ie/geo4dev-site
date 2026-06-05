@@ -1,10 +1,19 @@
 import { useState } from 'react'
 
+type Interest = 'updates' | 'contribute-data' | 'contribute-publication' | 'contribute-training' | 'feedback'
+
+function typeFor(interest: string): 'alert' | 'contact' | 'submission' {
+  if (interest === 'updates') return 'alert'
+  if (interest === 'feedback') return 'contact'
+  return 'submission'
+}
+
 export default function Contact() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'ok' | 'error'>('idle')
-  const [form, setForm] = useState({ name: '', email: '', organization: '', interest: 'updates', message: '' })
+  const [form, setForm] = useState({ name: '', email: '', organization: '', interest: 'updates' as Interest, message: '', link: '' })
 
   const set = (k: string, v: string) => setForm((f) => ({ ...f, [k]: v }))
+  const isContribute = form.interest.startsWith('contribute')
 
   async function submit(e: React.FormEvent) {
     e.preventDefault()
@@ -13,7 +22,7 @@ export default function Contact() {
       const res = await fetch('/api/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, type: typeFor(form.interest) }),
       })
       setStatus(res.ok ? 'ok' : 'error')
     } catch {
@@ -25,9 +34,9 @@ export default function Contact() {
     return (
       <main className="page section">
         <div className="container prose">
-          <span className="eyebrow">Updates</span>
-          <h2>You're on the list.</h2>
-          <p>Thanks — we'll be in touch when the platform and contribution tools go live.</p>
+          <span className="eyebrow">Thanks</span>
+          <h2>Got it — you're on the list.</h2>
+          <p>We've logged your details and notified the team. We'll be in touch about new datasets, publications, and releases.</p>
         </div>
       </main>
     )
@@ -36,12 +45,11 @@ export default function Contact() {
   return (
     <main className="page section">
       <div className="container prose">
-        <span className="eyebrow">Updates</span>
-        <h2>Get notified at launch</h2>
+        <span className="eyebrow">Alerts &amp; contact</span>
+        <h2>Get alerts &amp; get in touch</h2>
         <p className="muted">
-          Geo4Dev is being rebuilt as a fully open platform. Leave your details to
-          hear when it launches, or to flag interest in contributing data,
-          publications, or training.
+          Leave your details to hear when new datasets, publications, and releases go live —
+          or to flag a resource you'd like to contribute. Submissions notify the team directly.
         </p>
         <form onSubmit={submit} style={{ maxWidth: 480, marginTop: '1.2rem' }}>
           <div className="field">
@@ -59,23 +67,29 @@ export default function Contact() {
           <div className="field">
             <label htmlFor="interest">I'm interested in</label>
             <select id="interest" value={form.interest} onChange={(e) => set('interest', e.target.value)}>
-              <option value="updates">Launch updates</option>
+              <option value="updates">Alerts &amp; launch updates</option>
               <option value="contribute-data">Contributing data</option>
               <option value="contribute-publication">Contributing a publication</option>
               <option value="contribute-training">Contributing training</option>
               <option value="feedback">Giving feedback</option>
             </select>
           </div>
+          {isContribute && (
+            <div className="field">
+              <label htmlFor="link">Link to the resource</label>
+              <input id="link" type="url" placeholder="https://…" value={form.link} onChange={(e) => set('link', e.target.value)} />
+            </div>
+          )}
           <div className="field">
             <label htmlFor="msg">Message</label>
             <textarea id="msg" rows={3} value={form.message} onChange={(e) => set('message', e.target.value)} />
           </div>
           <button className="btn" type="submit" disabled={status === 'sending'}>
-            {status === 'sending' ? 'Sending…' : 'Notify me'}
+            {status === 'sending' ? 'Sending…' : 'Submit'}
           </button>
           {status === 'error' && (
-            <p style={{ color: 'var(--rust)', fontSize: '0.88rem', marginTop: '0.7rem' }}>
-              Something went wrong. The signup endpoint may not be wired up yet.
+            <p style={{ color: '#ef4444', fontSize: '0.88rem', marginTop: '0.7rem' }}>
+              Something went wrong. The submission endpoint may not be fully configured yet.
             </p>
           )}
         </form>
