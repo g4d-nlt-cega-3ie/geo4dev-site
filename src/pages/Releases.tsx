@@ -17,7 +17,7 @@ export default function Releases() {
         <h2>What's new on Geo4Dev</h2>
         <p>
           A running log of platform releases and notable additions. Want to be notified as these
-          ship? <Link to="/contact">Turn on alerts</Link>.
+          ship? <Link to="/contact">Get in touch</Link>.
         </p>
 
         <div style={{ marginTop: '2rem' }}>

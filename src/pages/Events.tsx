@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import eventsData from '../../content/events.json'
 import { GITHUB_OPEN_DATA } from '../lib/assets'
+import { safeUrl } from '../lib/safeUrl'
 import PageHeader from '../components/PageHeader'
 
 interface Ev { year: string; date: string; title: string; host: string; blurb: string; url: string }
@@ -33,14 +34,14 @@ export default function Events() {
           </p>
           <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap' }}>
             <a className="btn" href={DISCUSSIONS} target="_blank" rel="noreferrer">Submit an event ↗</a>
-            <Link className="btn ghost" to="/contact">Get event alerts</Link>
+            <Link className="btn ghost" to="/contact">Contact us</Link>
           </div>
         </div>
 
         <h3 style={{ marginTop: '2.4rem' }}>Past events</h3>
         <div className="event-list">
           {events.map((e) => (
-            <a className="event-item" href={e.url} target="_blank" rel="noreferrer" key={e.title}>
+            <a className="event-item" href={safeUrl(e.url)} target="_blank" rel="noreferrer" key={e.title}>
               <div className="event-year">{e.date}</div>
               <div className="event-body">
                 <h4>{e.title}</h4>

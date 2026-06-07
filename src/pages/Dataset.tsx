@@ -1,6 +1,7 @@
 import { Suspense, lazy } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { bySlug } from '../lib/catalog'
+import { safeUrl } from '../lib/safeUrl'
 
 const GeoMap = lazy(() => import('../map/GeoMap'))
 
@@ -35,7 +36,7 @@ export default function Dataset() {
         {d.description && <p className="desc">{d.description}</p>}
 
         {primaryLink && (
-          <a className="btn" href={primaryLink} target="_blank" rel="noreferrer">Open source ↗</a>
+          <a className="btn" href={safeUrl(primaryLink)} target="_blank" rel="noreferrer">Open source ↗</a>
         )}
 
         {located && (
@@ -68,7 +69,7 @@ export default function Dataset() {
               <div className="res-item" key={i}>
                 <span className="fmt">{r.format || 'LINK'}</span>
                 {r.url ? (
-                  <a href={r.url} target="_blank" rel="noreferrer">{r.name || r.url}</a>
+                  <a href={safeUrl(r.url)} target="_blank" rel="noreferrer">{r.name || r.url}</a>
                 ) : (
                   <span>{r.name || 'Resource'}</span>
                 )}

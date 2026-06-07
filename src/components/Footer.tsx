@@ -42,12 +42,12 @@ export default function Footer() {
             <Link to="/contribute">How to contribute</Link>
             <a href={GITHUB_OPEN_DATA} target="_blank" rel="noreferrer">Contribute on GitHub ↗</a>
             <a href="https://newlighttechnologies.com/blog/all" target="_blank" rel="noreferrer">Search NLT ↗</a>
-            <Link to="/contact">Get alerts</Link>
+            <Link to="/contact">Contact</Link>
           </div>
         </div>
 
         <div className="copy">
-          <span>© {new Date().getFullYear()} Geo4Dev. Open data under their respective licenses.</span>
+          <span>© {new Date().getFullYear()} Geo4Dev. Open data under their respective licenses. · <Link to="/privacy">Privacy</Link></span>
           <span className="powered">
             Powered by{' '}
             <a href="https://newlighttechnologies.com" target="_blank" rel="noreferrer">

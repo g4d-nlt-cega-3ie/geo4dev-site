@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import newsData from '../../content/news.json'
+import { safeUrl } from '../lib/safeUrl'
 import PageHeader from '../components/PageHeader'
 
 interface Source { id: string; name: string; site: string | null; searchMore?: string }
@@ -45,7 +46,7 @@ export default function News() {
 
         <div className="news-list">
           {shown.map((it) => (
-            <a className="news-item" href={it.url} target="_blank" rel="noreferrer" key={it.url}>
+            <a className="news-item" href={safeUrl(it.url)} target="_blank" rel="noreferrer" key={it.url}>
               <div className="news-head">
                 {it.kind && <span className="pill">{it.kind}</span>}
                 <span className="news-src">{byId(it.source)?.name.split(' — ')[0]}</span>

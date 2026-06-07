@@ -107,12 +107,12 @@ export default function About() {
           </p>
 
           <div className="callout">
-            <h3>Stay in the loop</h3>
+            <h3>Get involved</h3>
             <p style={{ marginBottom: '0.8rem' }}>
-              Turn on email alerts to hear when new datasets, publications, and platform releases
-              go live — and check the release notes for what's changed.
+              Have a resource, a question, or feedback? Get in touch — and check the release notes
+              for what's new. For announcements, follow the CEGA, 3ie, and NLT channels.
             </p>
-            <Link to="/contact" className="btn">Get alerts</Link>{' '}
+            <Link to="/contact" className="btn">Contact us</Link>{' '}
             <Link to="/releases" className="btn ghost">Release notes</Link>
           </div>
         </div>

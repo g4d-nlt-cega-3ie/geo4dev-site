@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { useSearchParams, Link } from 'react-router-dom'
 import GeoMap, { BASEMAPS, type GeoDataset } from '../map/GeoMap'
 import { search, taxonomy, CONTENT_TYPES, bySlug, byId } from '../lib/catalog'
+import { safeUrl } from '../lib/safeUrl'
 
 interface SectionProps { title: string; defaultOpen?: boolean; children: React.ReactNode }
 function Section({ title, defaultOpen = true, children }: SectionProps) {
@@ -174,7 +175,7 @@ export default function MapPage() {
                 </dl>
                 <div className="mp-actions">
                   {(selected.stable_link || selected.source_url) && (
-                    <a className="btn" href={(selected.stable_link || selected.source_url)!} target="_blank" rel="noreferrer">Open source ↗</a>
+                    <a className="btn" href={safeUrl(selected.stable_link || selected.source_url)} target="_blank" rel="noreferrer">Open source ↗</a>
                   )}
                   <Link className="btn ghost" to={`/dataset/${selected.slug}`}>Full details →</Link>
                 </div>

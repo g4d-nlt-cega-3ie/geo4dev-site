@@ -55,7 +55,7 @@ export default function Nav() {
           <NavLink to="/contribute">Contribute</NavLink>
           <NavLink to="/about">About</NavLink>
           <ThemeToggle />
-          <NavLink to="/contact" className="nav-cta">Get alerts</NavLink>
+          <NavLink to="/contact" className="nav-cta">Contact</NavLink>
         </nav>
       </div>
     </header>

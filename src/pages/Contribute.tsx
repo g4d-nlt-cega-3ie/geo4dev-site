@@ -85,12 +85,11 @@ export default function Contribute() {
         </div>
 
         <div className="callout">
-          <h3>Follow what's new</h3>
+          <h3>Questions?</h3>
           <p style={{ marginBottom: '0.8rem' }}>
-            Get email alerts when datasets, publications, and platform releases go live, and review
-            the changelog any time.
+            Get in touch with the team, and review the changelog any time.
           </p>
-          <Link to="/contact" className="btn">Get alerts</Link>{' '}
+          <Link to="/contact" className="btn">Contact us</Link>{' '}
           <Link to="/releases" className="btn ghost">Release notes</Link>
         </div>
       </div>
