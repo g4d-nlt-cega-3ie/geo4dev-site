@@ -2,9 +2,9 @@ Geo4Dev
 Geo4Dev is an open-science platform that brings together geospatial datasets,
 publications, and training resources connecting satellite and remote-sensing data to
 development economics, impact evaluation, and public policy.
-🌍 Live site: https://geo4dev.nltgis.ai
-📚 Browse the library: https://geo4dev.nltgis.ai/library
-🗺️ Explore the map: https://geo4dev.nltgis.ai/map
+🌍 Live site: https://geo4.dev
+📚 Browse the library: https://geo4.dev/library
+🗺️ Explore the map: https://geo4.dev/map
 Geo4Dev is a collaboration of New Light Technologies (NLT),
 the Center for Effective Global Action (CEGA) at UC Berkeley,
 and the International Initiative for Impact Evaluation (3ie).
@@ -22,7 +22,7 @@ Add a publication or dataset — link an existing resource, go through a short
 submission review, or propose it in the community repository.
 Improve the platform — open a pull request with bug fixes or new functionality.
 Discuss & review — share ideas and help review community submissions.
-Start here: https://geo4dev.nltgis.ai/contribute
+Start here: https://geo4.dev/contribute
 Community data repository: https://github.com/g4d-nlt-cega-3ie/open-data
 Develop locally
 ```bash
