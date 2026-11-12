@@ -2,11 +2,9 @@ import { Link } from 'react-router-dom'
 import { GITHUB_OPEN_DATA } from '../lib/assets'
 import PageHeader from '../components/PageHeader'
 
-const LOGOS: Record<string, string> = {
-  NLT: 'https://geo4dev-resources.s3.amazonaws.com/logos/nlt.png',
-  CEGA: 'https://geo4dev-resources.s3.amazonaws.com/logos/cega.png',
-  '3ie': 'https://geo4dev-resources.s3.amazonaws.com/logos/3ie.png',
-}
+// Member logos are optional and self-hosted: add the file to /public/logos/
+// and set e.g. NLT: '/logos/nlt.png'. With no entry, no logo is shown.
+const LOGOS: Record<string, string | undefined> = {}
 
 const MEMBERS = [
   {
@@ -65,7 +63,7 @@ export default function About() {
         <div className="members">
           {MEMBERS.map((m) => (
             <div className="member" key={m.name}>
-              <img className="member-logo" src={m.logo} alt={`${m.name} logo`} />
+              {m.logo && <img className="member-logo" src={m.logo} alt={`${m.name} logo`} />}
               <h3>{m.name}</h3>
               <p>{m.blurb}</p>
               <a className="site" href={m.site} target="_blank" rel="noreferrer">

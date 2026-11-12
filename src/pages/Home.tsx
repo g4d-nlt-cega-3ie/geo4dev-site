@@ -120,7 +120,11 @@ export default function Home() {
           <div className="partner-strip">
             {PARTNERS.map((p) => (
               <a key={p.name} href={p.href} target="_blank" rel="noreferrer" title={p.name}>
-                <img src={p.logo} alt={`${p.name} logo`} />
+                {p.logo ? (
+                  <img src={p.logo} alt={`${p.name} logo`} />
+                ) : (
+                  <span className="partner-name">{p.name}</span>
+                )}
               </a>
             ))}
           </div>

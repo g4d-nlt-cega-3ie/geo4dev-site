@@ -11,7 +11,11 @@ export default function Footer() {
           <div className="partner-logos">
             {PARTNERS.map((p) => (
               <a key={p.name} href={p.href} target="_blank" rel="noreferrer" title={p.name}>
-                <img src={p.logo} alt={`${p.name} logo`} />
+                {p.logo ? (
+                  <img src={p.logo} alt={`${p.name} logo`} />
+                ) : (
+                  <span className="partner-name">{p.name}</span>
+                )}
               </a>
             ))}
           </div>
@@ -51,7 +55,7 @@ export default function Footer() {
           <span className="powered">
             Powered by{' '}
             <a href="https://newlighttechnologies.com" target="_blank" rel="noreferrer">
-              <img src={NLT_LOGO} alt="New Light Technologies" />
+              {NLT_LOGO ? <img src={NLT_LOGO} alt="New Light Technologies" /> : 'New Light Technologies'}
             </a>
           </span>
         </div>
